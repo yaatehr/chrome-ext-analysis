@@ -3,6 +3,11 @@ import os
 import sys
 import requests
 from lxml import html
+import pickle
+from collections import Counter
+EXTENSION_ROOT_PATH = "/Users/yaatehr/Library/Application Support/Google/Chrome/Default/Extensions"
+
+
 
 
 def try_json_attribute(json_input, lookup_key):
@@ -27,7 +32,7 @@ def item_generator(json_input, lookup_key):
         for item in json_input:
             yield from item_generator(item, lookup_key)
 
-class app_manifest():
+class Extension():
     def __init__(self, json_root, id):
         self.id = id
         self.query_url = "https://chrome.google.com/webstore/detail/"
@@ -57,11 +62,17 @@ class app_manifest():
     def analyze_csp(self):
         if not self.content_security_policy:
             print("CSP is secure")
+        if "unsafe-eval" in self.content_security_policy.lower():
+            pass
+        if "unsafe" in self.content_security_policy:
+            pass
+
 
 
 
 if __name__ == "__main__":
-    root_path = os.path.abspath(os.path.dirname(__file__))
+    # root_path = os.path.abspath(os.path.dirname(__file__))
+    root_path = EXTENSION_ROOT_PATH
     id_to_path = {}
     with open("temp_output.csv", 'w+') as f:
         for root, dirs, files in os.walk(root_path):
@@ -70,8 +81,42 @@ if __name__ == "__main__":
                     full_path = os.path.join(root, file)
                     id_to_path[os.path.basename(os.path.dirname(os.path.dirname(full_path)))] = full_path
 
-
+    extension_list = []
     for k,v in id_to_path.items():
         with open(v) as fid:
             data = json.load(fid)
-            app_manifest(data, k)
+            e = Extension(data, k)
+            # print(e.__dict__.items())
+            if e.is_valid:
+                extension_list.append(e)
+    print(len(extension_list))
+
+    analytics = {"csp": Counter(), "permissions": Counter() }
+
+
+    for e in extension_list:
+        if e.content_security_policy:
+            policy_types = e.content_security_policy.split(";")
+            t = ""
+            for p_type in policy_types:
+                for i, p in enumerate(p_type.split()):
+                    if i == 0:
+                        t = p
+                        continue
+                    if p == 'self':
+                        print(p)
+                        continue
+
+                    analytics["csp"][t] += 1
+        if e.permissions:
+            perms = e.permissions.strip('][').split(', ')
+            for p in perms:
+                analytics["permissions"][p] += 1
+            
+
+        print(analytics)
+
+
+
+    with open("yaateh_extensions.pkl", 'wb') as f:
+        pickle.dump((extension_list, analytics), f)
