@@ -74,12 +74,12 @@ if __name__ == "__main__":
     # root_path = os.path.abspath(os.path.dirname(__file__))
     root_path = EXTENSION_ROOT_PATH
     id_to_path = {}
-    with open("temp_output.csv", 'w+') as f:
-        for root, dirs, files in os.walk(root_path):
-            for file in files:
-                if file == ("manifest.json"):
-                    full_path = os.path.join(root, file)
-                    id_to_path[os.path.basename(os.path.dirname(os.path.dirname(full_path)))] = full_path
+    # with open("temp_output.csv", 'w+') as f:
+    for root, dirs, files in os.walk(root_path):
+        for file in files:
+            if file == ("manifest.json"):
+                full_path = os.path.join(root, file)
+                id_to_path[os.path.basename(os.path.dirname(os.path.dirname(full_path)))] = full_path
 
     extension_list = []
     for k,v in id_to_path.items():
@@ -114,7 +114,7 @@ if __name__ == "__main__":
                 analytics["permissions"][p] += 1
             
 
-        print(analytics)
+    print(analytics)
 
 
 
