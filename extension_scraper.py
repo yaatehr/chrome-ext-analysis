@@ -7,6 +7,35 @@ import pickle
 from collections import Counter
 EXTENSION_ROOT_PATH = "/Users/yaatehr/Library/Application Support/Google/Chrome/Default/Extensions"
 
+
+def try_json_attribute(json_input, lookup_key):
+    """
+    helper method. json object access in try catch
+    """
+    if not isinstance(lookup_key, str):
+        raise RuntimeError("lookup_key must be a string")
+    value = list(item_generator(json_input, lookup_key))
+    try:
+        value = str(value[0])
+    except:
+        value = None
+    return value
+
+
+def item_generator(json_input, lookup_key):
+    """
+    recursively index into dictionaries and lists for the target key
+    """
+    if isinstance(json_input, dict):
+        for k, v in json_input.items():
+            if k == lookup_key:
+                yield v
+            else:
+                yield from item_generator(v, lookup_key)
+    elif isinstance(json_input, list):
+        for item in json_input:
+            yield from item_generator(item, lookup_key)
+
 class Extension():
     """
         class that represents the metadata from each manifest.json
