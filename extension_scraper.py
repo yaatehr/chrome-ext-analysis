@@ -79,6 +79,12 @@ class Extension():
         # if "unsafe" in self.content_security_policy:
         #     pass
 
+    def __str__(self):
+        """
+        Turn metadata from each extension into a 
+        """
+
+
 
 
 
@@ -86,22 +92,63 @@ if __name__ == "__main__":
     pp = pprint.PrettyPrinter(indent=2, compact=True)
 
 
-    root_path = EXTENSION_ROOT_PATH # you can replace this with the path to your extensions
-    id_to_path = {}
-    for root, dirs, files in os.walk(root_path): #build id to path dict
-        for file in files:
-            if file == ("manifest.json"):
-                full_path = os.path.join(root, file)
-                id_to_path[os.path.basename(os.path.dirname(os.path.dirname(full_path)))] = full_path
+    # root_path = EXTENSION_ROOT_PATH # you can replace this with the path to your extensions
+    root_path = os.path.abspath(os.path.dirname(__file__))
+    manifest_path = os.path.join(root_path, "manifest_extraction/manifests/")
 
-    extension_list = []
-    for k,v in id_to_path.items(): # build metadata class for each manifest
-        with open(v) as fid:
-            data = json.load(fid)
-            extension = Extension(data, k)
-            # print(extension.__dict__.items())
-            if extension.is_valid:
-                extension_list.append(extension)
+    id_to_path = {}
+
+    #NOTE Uncomment and comment out the other sectino if you want to evaluate your own extensions
+
+    # for root, dirs, files in os.walk(root_path): #build id to path dict
+    #     for file in files:
+    #         if file == ("manifest.json"):
+    #             full_path = os.path.join(root, file)
+    #             id_to_path[os.path.basename(os.path.dirname(os.path.dirname(full_path)))] = full_path
+
+    #NOTE Uncomment and comment out the other section if you want to evaluate scraped extensions
+
+    checkpoint_path = os.path.join(root_path, "extension_class_dict.pkl")
+    if not os.path.exists(checkpoint_path):
+            
+        for root, dirs, files in os.walk(manifest_path): #build id to path dict
+            for file in files:
+                if file.endswith(".json"):
+                    full_path = os.path.join(root, file)
+                    id = file[:-5]
+                    id_to_path[id] = full_path
+
+
+        extension_class_dict = {}
+        num_invalid_extensions = 0
+        total_num_extensions = len(id_to_path.items())
+        counter = 0
+
+        for k,v in id_to_path.items(): # build metadata class for each manifest
+            if counter % (total_num_extensions//10) == 0 :
+                print(f"completed {counter}/{total_num_extensions} extensions")
+
+            with open(v) as fid:
+                data = json.load(fid)
+                extension = Extension(data, k)
+                # print(extension.__dict__.items())
+                if extension.is_valid:
+                    extension_class_dict[k] = extension
+                else:
+                    num_invalid_extensions +=1 
+            counter += 1
+
+        print(f"finished with  {num_invalid_extensions} failures out of {total_num_extensions} total extensions")
+
+        #Note checkpoint the extensions after their names have been queried
+        with open(checkpoint_path, "wb") as checkpoint_file:
+            pickle.dump(extension_class_dict, checkpoint_file)
+    else:
+        extension_class_dict = pickle.load(open(checkpoint_path, "rb"))
+    
+    extension_list = list(extension_class_dict.values())
+
+
 
     analytics = {"content_security_policy": Counter(), "permissions": Counter(), "unsafe": Counter(), "misc": Counter(), "num_content_scripts": Counter(), "num_apps_evaluated": len(extension_list)} #TODO add optional permissions:
 
@@ -141,5 +188,5 @@ if __name__ == "__main__":
 
 
 
-    with open("yaateh_extensions.pkl", 'wb') as f:
-        pickle.dump((extension_list, analytics), f)
+    # with open("yaateh_extensions.pkl", 'wb') as f:
+    #     pickle.dump((extension_list, analytics), f)
