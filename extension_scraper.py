@@ -5,6 +5,7 @@ import requests
 from lxml import html
 import pickle
 from collections import Counter
+import pprint
 EXTENSION_ROOT_PATH = "/Users/yaatehr/Library/Application Support/Google/Chrome/Default/Extensions"
 
 
@@ -46,6 +47,10 @@ class Extension():
         self.permissions = try_json_attribute(json_root, "permissions")
         self.optional_permissions = try_json_attribute(json_root, "optional_permissions")
         self.app = try_json_attribute(json_root, "app")
+        self.content_scripts = try_json_attribute(json_root, "content_scripts")
+        self.export = try_json_attribute(json_root, "export")
+        self.manifest_version = try_json_attribute(json_root, "manifest_version")
+        self.manifest_json = json_root
 
         self.title = self.get_plaintext_name()
         if "Error".lower() in self.title.lower():
@@ -78,6 +83,9 @@ class Extension():
 
 
 if __name__ == "__main__":
+    pp = pprint.PrettyPrinter(indent=2, compact=True)
+
+
     root_path = EXTENSION_ROOT_PATH # you can replace this with the path to your extensions
     id_to_path = {}
     for root, dirs, files in os.walk(root_path): #build id to path dict
@@ -95,7 +103,7 @@ if __name__ == "__main__":
             if extension.is_valid:
                 extension_list.append(extension)
 
-    analytics = {"csp": Counter(), "permissions": Counter() } #TODO add optional permissions
+    analytics = {"content_security_policy": Counter(), "permissions": Counter(), "unsafe": Counter(), "misc": Counter(), "num_content_scripts": Counter()} #TODO add optional permissions:
 
     for extension in extension_list:
         if extension.content_security_policy:
@@ -110,13 +118,26 @@ if __name__ == "__main__":
                         print(p)
                         continue
 
-                    analytics["csp"][t] += 1
+                    analytics["content_security_policy"][t] += 1
+                    if "unsafe" in p:
+                        analytics["unsafe"][p] += 1
         if extension.permissions:
             perms = extension.permissions.strip('][').split(', ')
             for p in perms:
+                p = p.strip("\'")
                 analytics["permissions"][p] += 1
+
+        if extension.export:
+            analytics["misc"]["export"] += 1
+        if extension.manifest_version:
+            if "1" in extension.manifest_version or extension.manifest_version == 1:
+                analytics["misc"]["manifest_version"] += 1
+        if extension.content_scripts:
+            js = list(item_generator(extension.manifest_json, "js"))
+            if len(js):
+                analytics["num_content_scripts"][len(js)] += 1
             
-    print(analytics)
+    pp.pprint(analytics)
 
 
 
