@@ -1,1 +1,61 @@
-"{\"background\": {\"scripts\": [\"libs/jquery.js\", \"libs/collection.js\", \"background.js\"]}, \"browser_action\": {\"default_icon\": {\"128\": \"assets/icons/icon128.png\", \"256\": \"assets/icons/icon256.png\", \"32\": \"assets/icons/icon32.png\", \"48\": \"assets/icons/icon48.png\", \"96\": \"assets/icons/icon96.png\"}, \"default_popup\": \"popup.html\"}, \"content_scripts\": [{\"all_frames\": true, \"js\": [\"libs/jquery.js\", \"libs/cursor.js\"], \"matches\": [\"<all_urls>\"]}], \"content_security_policy\": \"script-src 'self' 'unsafe-eval'; object-src 'self'\", \"default_locale\": \"en\", \"description\": \"__MSG_app_description__\", \"externally_connectable\": {\"matches\": [\"*://*.custom-cursor.com/*\"]}, \"icons\": {\"128\": \"assets/icons/icon128.png\", \"256\": \"assets/icons/icon256.png\", \"32\": \"assets/icons/icon32.png\", \"48\": \"assets/icons/icon48.png\", \"96\": \"assets/icons/icon96.png\"}, \"manifest_version\": 2, \"name\": \"__MSG_app_name__\", \"options_page\": \"options.html\", \"permissions\": [\"tabs\", \"*://*/*\", \"storage\"], \"update_url\": \"https://clients2.google.com/service/update2/crx\", \"version\": \"2.1.8\", \"version_name\": \"2.1.8\", \"web_accessible_resources\": [\"assets/*.*\", \"libs/*.*\"]}\n"
+{
+  "background": {
+    "scripts": [
+      "libs/jquery.js",
+      "libs/collection.js",
+      "background.js"
+    ]
+  },
+  "browser_action": {
+    "default_icon": {
+      "128": "assets/icons/icon128.png",
+      "256": "assets/icons/icon256.png",
+      "32": "assets/icons/icon32.png",
+      "48": "assets/icons/icon48.png",
+      "96": "assets/icons/icon96.png"
+    },
+    "default_popup": "popup.html"
+  },
+  "content_scripts": [
+    {
+      "all_frames": true,
+      "js": [
+        "libs/jquery.js",
+        "libs/cursor.js"
+      ],
+      "matches": [
+        "<all_urls>"
+      ]
+    }
+  ],
+  "content_security_policy": "script-src 'self' 'unsafe-eval'; object-src 'self'",
+  "default_locale": "en",
+  "description": "__MSG_app_description__",
+  "externally_connectable": {
+    "matches": [
+      "*://*.custom-cursor.com/*"
+    ]
+  },
+  "icons": {
+    "128": "assets/icons/icon128.png",
+    "256": "assets/icons/icon256.png",
+    "32": "assets/icons/icon32.png",
+    "48": "assets/icons/icon48.png",
+    "96": "assets/icons/icon96.png"
+  },
+  "manifest_version": 2,
+  "name": "__MSG_app_name__",
+  "options_page": "options.html",
+  "permissions": [
+    "tabs",
+    "*://*/*",
+    "storage"
+  ],
+  "update_url": "https://clients2.google.com/service/update2/crx",
+  "version": "2.1.8",
+  "version_name": "2.1.8",
+  "web_accessible_resources": [
+    "assets/*.*",
+    "libs/*.*"
+  ]
+}

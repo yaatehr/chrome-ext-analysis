@@ -20,8 +20,8 @@ def extract(app_id):
     if len(manifest) == 0:
         return None
     try:
-        t = json.loads(manifest.replace("\n", ""))
-        manifest = json.dumps(manifest, indent=2)
+        t = json.loads(manifest.rstrip("\r\n"))
+        manifest = json.dumps(t, indent=2)
     except:
         pass
     return manifest

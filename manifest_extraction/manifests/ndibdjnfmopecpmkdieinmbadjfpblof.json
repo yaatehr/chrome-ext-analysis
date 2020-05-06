@@ -1,1 +1,30 @@
-"{\"update_url\": \"https://clients2.google.com/service/update2/crx\", \"name\": \"AVG Secure Search\", \"description\": \"AVG Secure Search alerts you before you visit dangerous webpages to make sure your identity, personal information & PC are protected\", \"icons\": {\"128\": \"icons/wticon128.png\"}, \"version\": \"1.0.0.9\", \"manifest_version\": 2, \"page_action\": {\"default_icon\": \"icons/wticon19.png\"}, \"chrome_settings_overrides\": {\"homepage\": \"https://mysearch.avg.com/?rvt=1\", \"startup_pages\": [\"https://mysearch.avg.com/?rvt=1\"], \"search_provider\": {\"name\": \"AVG Secure Search\", \"keyword\": \"https://mysearch.avg.com\", \"search_url\": \"https://mysearch.avg.com/search?rvt=1&sap=dsp&q={searchTerms}\", \"favicon_url\": \"https://mysearch.avg.com/favicon.ico\", \"encoding\": \"UTF-8\", \"is_default\": true}}, \"chrome_url_overrides\": {\"newtab\": \"pages/newtab.html\"}}\n"
+{
+  "update_url": "https://clients2.google.com/service/update2/crx",
+  "name": "AVG Secure Search",
+  "description": "AVG Secure Search alerts you before you visit dangerous webpages to make sure your identity, personal information & PC are protected",
+  "icons": {
+    "128": "icons/wticon128.png"
+  },
+  "version": "1.0.0.9",
+  "manifest_version": 2,
+  "page_action": {
+    "default_icon": "icons/wticon19.png"
+  },
+  "chrome_settings_overrides": {
+    "homepage": "https://mysearch.avg.com/?rvt=1",
+    "startup_pages": [
+      "https://mysearch.avg.com/?rvt=1"
+    ],
+    "search_provider": {
+      "name": "AVG Secure Search",
+      "keyword": "https://mysearch.avg.com",
+      "search_url": "https://mysearch.avg.com/search?rvt=1&sap=dsp&q={searchTerms}",
+      "favicon_url": "https://mysearch.avg.com/favicon.ico",
+      "encoding": "UTF-8",
+      "is_default": true
+    }
+  },
+  "chrome_url_overrides": {
+    "newtab": "pages/newtab.html"
+  }
+}

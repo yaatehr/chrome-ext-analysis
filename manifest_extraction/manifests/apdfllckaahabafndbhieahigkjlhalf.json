@@ -1,1 +1,32 @@
-"{\"update_url\": \"https://clients2.google.com/service/update2/crx\", \"name\": \"__MSG_appName__\", \"description\": \"__MSG_appDesc__\", \"default_locale\": \"en_US\", \"version\": \"14.2\", \"icons\": {\"128\": \"128.png\"}, \"offline_enabled\": true, \"manifest_version\": 2, \"permissions\": [\"clipboardRead\", \"clipboardWrite\", \"notifications\"], \"options_page\": \"https://drive.google.com/drive/settings\", \"background\": {\"allow_js_access\": false}, \"app\": {\"launch\": {\"web_url\": \"https://drive.google.com/?usp=chrome_app\"}, \"urls\": [\"http://docs.google.com/\", \"http://drive.google.com/\", \"https://docs.google.com/\", \"https://drive.google.com/\"]}}\n"
+{
+  "update_url": "https://clients2.google.com/service/update2/crx",
+  "name": "__MSG_appName__",
+  "description": "__MSG_appDesc__",
+  "default_locale": "en_US",
+  "version": "14.2",
+  "icons": {
+    "128": "128.png"
+  },
+  "offline_enabled": true,
+  "manifest_version": 2,
+  "permissions": [
+    "clipboardRead",
+    "clipboardWrite",
+    "notifications"
+  ],
+  "options_page": "https://drive.google.com/drive/settings",
+  "background": {
+    "allow_js_access": false
+  },
+  "app": {
+    "launch": {
+      "web_url": "https://drive.google.com/?usp=chrome_app"
+    },
+    "urls": [
+      "http://docs.google.com/",
+      "http://drive.google.com/",
+      "https://docs.google.com/",
+      "https://drive.google.com/"
+    ]
+  }
+}

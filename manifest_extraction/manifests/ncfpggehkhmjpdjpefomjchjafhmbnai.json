@@ -1,1 +1,43 @@
-"{\"update_url\": \"https://clients2.google.com/service/update2/crx\", \"name\": \"Facebook Screen Sharing\", \"version\": \"1.10.4\", \"description\": \"Share your screen in video calls on Facebook, Messenger and Workplace\", \"minimum_chrome_version\": \"34\", \"permissions\": [\"desktopCapture\", \"notifications\", \"https://*.facebook.com/\", \"https://*.messenger.com/\"], \"externally_connectable\": {\"matches\": [\"https://*.facebook.com/*\", \"https://*.messenger.com/*\"]}, \"background\": {\"scripts\": [\"v1/sc_ext_background_v1.js\", \"v2/sc_ext_background.js\"]}, \"content_scripts\": [{\"js\": [\"v1/sc_ext_content_v1.js\", \"v2/sc_ext_content.js\"], \"matches\": [\"https://*.facebook.com/*\", \"https://*.messenger.com/*\"]}], \"icons\": {\"16\": \"icon29.png\", \"48\": \"icon50.png\", \"128\": \"icon144.png\"}, \"manifest_version\": 2}\n"
+{
+  "update_url": "https://clients2.google.com/service/update2/crx",
+  "name": "Facebook Screen Sharing",
+  "version": "1.10.4",
+  "description": "Share your screen in video calls on Facebook, Messenger and Workplace",
+  "minimum_chrome_version": "34",
+  "permissions": [
+    "desktopCapture",
+    "notifications",
+    "https://*.facebook.com/",
+    "https://*.messenger.com/"
+  ],
+  "externally_connectable": {
+    "matches": [
+      "https://*.facebook.com/*",
+      "https://*.messenger.com/*"
+    ]
+  },
+  "background": {
+    "scripts": [
+      "v1/sc_ext_background_v1.js",
+      "v2/sc_ext_background.js"
+    ]
+  },
+  "content_scripts": [
+    {
+      "js": [
+        "v1/sc_ext_content_v1.js",
+        "v2/sc_ext_content.js"
+      ],
+      "matches": [
+        "https://*.facebook.com/*",
+        "https://*.messenger.com/*"
+      ]
+    }
+  ],
+  "icons": {
+    "16": "icon29.png",
+    "48": "icon50.png",
+    "128": "icon144.png"
+  },
+  "manifest_version": 2
+}

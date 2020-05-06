@@ -1,1 +1,27 @@
-"{\"update_url\": \"https://clients2.google.com/service/update2/crx\", \"name\": \"Application Launcher for Drive (by Google)\", \"short_name\": \"Google Drive App Launcher\", \"version\": \"3.2\", \"manifest_version\": 2, \"description\": \"Open Drive files directly from your browser in compatible applications installed on your computer.\", \"background\": {\"persistent\": false, \"scripts\": [\"background.js\"]}, \"permissions\": [\"nativeMessaging\"], \"externally_connectable\": {\"matches\": [\"*://*.google.com/*\"]}, \"icons\": {\"16\": \"images/drive-sync16.png\", \"64\": \"images/drive-sync64.png\", \"256\": \"images/drive-sync256.png\"}}\n"
+{
+  "update_url": "https://clients2.google.com/service/update2/crx",
+  "name": "Application Launcher for Drive (by Google)",
+  "short_name": "Google Drive App Launcher",
+  "version": "3.2",
+  "manifest_version": 2,
+  "description": "Open Drive files directly from your browser in compatible applications installed on your computer.",
+  "background": {
+    "persistent": false,
+    "scripts": [
+      "background.js"
+    ]
+  },
+  "permissions": [
+    "nativeMessaging"
+  ],
+  "externally_connectable": {
+    "matches": [
+      "*://*.google.com/*"
+    ]
+  },
+  "icons": {
+    "16": "images/drive-sync16.png",
+    "64": "images/drive-sync64.png",
+    "256": "images/drive-sync256.png"
+  }
+}

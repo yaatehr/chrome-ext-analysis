@@ -42,12 +42,17 @@ if __name__ == "__main__":
         print(USAGE)
         sys.exit(0)
     name = sys.argv[1]
+    should_delete = False
     if not name.endswith(".crx"):
         # download the extension first
         try:
             app_name = sys.argv[2]
         except:
             app_name ="extension"
+        try:
+            should_delete = sys.argv[3] == "--delete"
+        except:
+            should_delete = False
         url = url_for_app_id(name)
         os.system(f"curl -L -o \"{app_name}.crx\" \"{url}\" &> /dev/null")
         # reset the name to be that of the downloaded extension
@@ -60,4 +65,6 @@ if __name__ == "__main__":
     read_and_output_json("temp/manifest.json")
     os.system(f"mv temp/{name} .")
     os.system("rm -rf temp")
+    if should_delete:
+        os.system(f"rm {name}")
     sys.exit(0)
