@@ -1,0 +1,29 @@
+{
+  "update_url": "https://clients2.google.com/service/update2/crx",
+  "name": "Currently",
+  "version": "3.4.0",
+  "manifest_version": 2,
+  "options_page": "app/index.html#/drawer/settings",
+  "icons": {
+    "16": "images/icon16.png",
+    "96": "images/icon96.png",
+    "128": "images/icon128.png"
+  },
+  "description": "Replace new tab screen with current time and weather.",
+  "chrome_url_overrides": {
+    "newtab": "app/index.html"
+  },
+  "default_locale": "en",
+  "permissions": [
+    "storage",
+    "unlimitedStorage",
+    "geolocation",
+    "unlimitedStorage",
+    "https://maps.googleapis.com/maps/api/",
+    "http://api.wunderground.com/api",
+    "https://ssl.google-analytics.com/",
+    "https://s3.amazonaws.com/"
+  ],
+  "content_security_policy": "script-src 'self' https://ssl.google-analytics.com https://widget.uservoice.com/; object-src 'self'",
+  "key": "MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQDBY3p6E6TGtVMLW3Lb1h2GZNgji/UOCGXaSnrnnNfV5xGzM+A7IYYUgDiwYnsgRVT2SX9F7s36aEqbVEil5oqsRbxHIMuzyB8Cdj9Y6zOF9jZz/mDhGE+gyDdsYBBfbzGeNCSGrHW/CX5EH75tipTWAv7jdruoqnEyotbIShHaTwIDAQAB"
+}

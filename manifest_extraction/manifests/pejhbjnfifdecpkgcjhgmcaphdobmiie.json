@@ -1,0 +1,26 @@
+{
+  "update_url": "https://clients2.google.com/service/update2/crx",
+  "manifest_version": 2,
+  "name": "Toast",
+  "description": "Organize your tabs into sessions",
+  "version": "2.2.1",
+  "browser_action": {},
+  "icons": {
+    "16": "images/icon16.png",
+    "48": "images/icon48.png",
+    "128": "images/icon128.png"
+  },
+  "background": {
+    "scripts": [
+      "js/jquery.js",
+      "background.js"
+    ]
+  },
+  "permissions": [
+    "cookies",
+    "*://*.dotoast.com/*",
+    "tabs",
+    "storage",
+    "chrome://favicon/"
+  ]
+}

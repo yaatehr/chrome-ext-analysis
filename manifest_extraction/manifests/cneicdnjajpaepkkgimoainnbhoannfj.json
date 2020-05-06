@@ -1,0 +1,38 @@
+{
+  "update_url": "https://clients2.google.com/service/update2/crx",
+  "manifest_version": 2,
+  "name": "Plan to Eat Recipe Clipper",
+  "version": "1.0.8",
+  "description": "This extension imports recipes from your favorite sites into your Plan to Eat account.",
+  "icons": {
+    "16": "images/icon_16.png",
+    "32": "images/icon_32.png",
+    "48": "images/icon_48.png",
+    "64": "images/icon_64.png",
+    "96": "images/icon_96.png",
+    "128": "images/icon_128.png"
+  },
+  "browser_action": {
+    "default_title": "Recipe Clipper",
+    "default_icon": "images/icon.png",
+    "default_popup": "popup.html"
+  },
+  "permissions": [
+    "*://*/*",
+    "tabs",
+    "management"
+  ],
+  "short_name": "Recipe Clipper",
+  "content_scripts": [
+    {
+      "matches": [
+        "*://*.plantoeat.com/*",
+        "*://*.plantoeat.dev/*"
+      ],
+      "js": [
+        "installed.js"
+      ],
+      "run_at": "document_end"
+    }
+  ]
+}
