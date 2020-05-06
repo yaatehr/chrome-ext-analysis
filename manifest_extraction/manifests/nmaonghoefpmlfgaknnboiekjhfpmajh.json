@@ -1,0 +1,189 @@
+{
+  "update_url": "https://clients2.google.com/service/update2/crx",
+  "name": "Crystal",
+  "description": "Communicate with anyone based on their unique personality.",
+  "version": "8.37.2",
+  "permissions": [
+    "tabs",
+    "storage",
+    "contextMenus",
+    "http://*/",
+    "https://*/"
+  ],
+  "options_page": "options.html",
+  "background": {
+    "scripts": [
+      "background.bundle.js"
+    ],
+    "persistent": true
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "*://*/*"
+      ],
+      "js": [
+        "content_base.bundle.js"
+      ],
+      "css": [
+        "src/__assets__/static/css/noprint.css"
+      ]
+    },
+    {
+      "matches": [
+        "*://*/*"
+      ],
+      "exclude_globs": [
+        "*://*.linkedin.com/*"
+      ],
+      "js": [
+        "content.bundle.js"
+      ],
+      "css": [
+        "src/__assets__/static/css/noprint.css"
+      ]
+    },
+    {
+      "matches": [
+        "*://*.salesloft.com/*"
+      ],
+      "js": [
+        "content_salesloft.bundle.js"
+      ],
+      "css": [
+        "src/__assets__/static/css/noprint.css"
+      ]
+    },
+    {
+      "matches": [
+        "*://*.linkedin.com/*"
+      ],
+      "js": [
+        "content_linkedin.bundle.js"
+      ],
+      "css": [
+        "src/__assets__/static/css/noprint.css"
+      ]
+    },
+    {
+      "matches": [
+        "*://*.integration-partner-domains-here.com/*",
+        "*://*.beta.realtyconnection.com/*",
+        "*://*.realtyconnection.com/*"
+      ],
+      "js": [
+        "content_integration_partners.bundle.js"
+      ],
+      "css": [
+        "src/__assets__/static/css/noprint.css"
+      ]
+    },
+    {
+      "matches": [
+        "*://*.salesforce.com/*",
+        "*://*.lightning.force.com/*"
+      ],
+      "js": [
+        "content_salesforce.bundle.js"
+      ],
+      "css": [
+        "src/__assets__/static/css/noprint.css"
+      ]
+    },
+    {
+      "matches": [
+        "*://*.app.hubspot.com/*"
+      ],
+      "js": [
+        "content_hubspot.bundle.js"
+      ],
+      "css": [
+        "src/__assets__/static/css/noprint.css"
+      ]
+    },
+    {
+      "matches": [
+        "*://*.insightly.com/*"
+      ],
+      "js": [
+        "content_insightly.bundle.js"
+      ],
+      "css": [
+        "src/__assets__/static/css/noprint.css"
+      ]
+    },
+    {
+      "matches": [
+        "*://*.outreach.io/*"
+      ],
+      "js": [
+        "content_outreach.bundle.js"
+      ],
+      "css": [
+        "src/__assets__/static/css/noprint.css"
+      ]
+    },
+    {
+      "matches": [
+        "*://*.outlook.office365.com/*",
+        "*://*.outlook.office.com/*"
+      ],
+      "js": [
+        "content_outlook.bundle.js"
+      ],
+      "css": [
+        "src/__assets__/static/css/noprint.css"
+      ]
+    },
+    {
+      "matches": [
+        "*://*.app.drift.com/*"
+      ],
+      "js": [
+        "content_drift.bundle.js"
+      ],
+      "css": [
+        "src/__assets__/static/css/noprint.css"
+      ]
+    },
+    {
+      "matches": [
+        "*://*.pipedrive.com/*"
+      ],
+      "js": [
+        "content_pipedrive.bundle.js"
+      ],
+      "css": [
+        "src/__assets__/static/css/noprint.css"
+      ]
+    },
+    {
+      "matches": [
+        "*://*.arms.recrs.com/*"
+      ],
+      "js": [
+        "content_arms.bundle.js"
+      ],
+      "css": [
+        "src/__assets__/static/css/noprint.css"
+      ]
+    }
+  ],
+  "browser_action": {
+    "default_title": "Crystal",
+    "default_icon": "src/__assets__/static/icons/badge_48.png"
+  },
+  "icons": {
+    "16": "src/__assets__/static/icons/badge_16.png",
+    "48": "src/__assets__/static/icons/badge_48.png",
+    "128": "src/__assets__/static/icons/badge_128.png"
+  },
+  "web_accessible_resources": [
+    "src/__assets__/*",
+    "sidebar.html",
+    "compose_button.html",
+    "open_button_tab.html"
+  ],
+  "manifest_version": 2,
+  "content_security_policy": "script-src 'self' https://www.google-analytics.com; object-src 'self'"
+}

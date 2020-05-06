@@ -1,0 +1,46 @@
+{
+  "update_url": "https://clients2.google.com/service/update2/crx",
+  "manifest_version": 2,
+  "name": "Kanjidex",
+  "description": "A simple extension for looking up kanji characters.",
+  "version": "2.1",
+  "author": "seekwhence",
+  "icons": {
+    "16": "./assets/icons/icon_16.png",
+    "32": "./assets/icons/icon_32.png",
+    "48": "./assets/icons/icon_48.png",
+    "128": "./assets/icons/icon_128.png"
+  },
+  "browser_action": {
+    "default_title": "Kanjidex",
+    "default_popup": "popup.html"
+  },
+  "background": {
+    "scripts": [
+      "./js/background.js"
+    ]
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "<all_urls>"
+      ],
+      "js": [
+        "./js/content.js"
+      ],
+      "css": [
+        "./themes/kanjidex.css"
+      ]
+    }
+  ],
+  "permissions": [
+    "<all_urls>",
+    "*://*.jisho.org/*",
+    "*://*/*",
+    "activeTab",
+    "contextMenus",
+    "storage",
+    "notifications",
+    "tabs"
+  ]
+}

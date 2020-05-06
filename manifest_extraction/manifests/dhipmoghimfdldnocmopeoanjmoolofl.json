@@ -1,0 +1,26 @@
+{
+  "update_url": "https://clients2.google.com/service/update2/crx",
+  "manifest_version": 2,
+  "name": "__MSG_name__",
+  "version": "1.5",
+  "background": {
+    "page": "background.html"
+  },
+  "browser_action": {
+    "default_icon": "assets/PicMonkey_16.png",
+    "default_title": "__MSG_title__",
+    "default_popup": "popup.html"
+  },
+  "default_locale": "en",
+  "description": "__MSG_description__",
+  "incognito": "split",
+  "icons": {
+    "128": "assets/PicMonkey_128.png",
+    "48": "assets/PicMonkey_48.png",
+    "16": "assets/PicMonkey_16.png"
+  },
+  "permissions": [
+    "tabs",
+    "<all_urls>"
+  ]
+}

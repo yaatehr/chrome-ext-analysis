@@ -1,0 +1,80 @@
+{
+  "update_url": "https://clients2.google.com/service/update2/crx",
+  "manifest_version": 2,
+  "name": "Twinword Finder",
+  "short_name": "Finder",
+  "version": "0.2.9971",
+  "version_name": "0.2.9971",
+  "description": "Highlight multiple keywords. Highlight synonyms of your keywords. Highlight paragraphs related to your keywords.",
+  "icons": {
+    "16": "images/icon16.png",
+    "48": "images/icon48.png",
+    "128": "images/icon128.png"
+  },
+  "author": "Twinword Inc.",
+  "homepage_url": "https://www.twinword.com/finder",
+  "browser_action": {
+    "default_icon": {
+      "19": "images/browser_action_icon19_off.png",
+      "38": "images/browser_action_icon38_off.png"
+    },
+    "default_title": "Twinword Finder"
+  },
+  "background": {
+    "scripts": [
+      "scripts/ga.js",
+      "openlib/buy.js",
+      "data/wa0.2.32/ii.js",
+      "data/in0.1.0/in.js",
+      "scripts/obj_ProcessChain.js",
+      "scripts/obj_LocalStore.js",
+      "scripts/obj_SnipereaderLicense.js",
+      "scripts/obj_mcrypt.js",
+      "scripts/obj_SnipereaderBackground.js",
+      "scripts/background.js"
+    ]
+  },
+  "content_security_policy": "script-src 'self' https://ssl.google-analytics.com; object-src 'self'",
+  "commands": {
+    "_execute_browser_action": {
+      "suggested_key": {
+        "default": "Ctrl+Shift+F",
+        "windows": "Ctrl+Shift+F",
+        "mac": "MacCtrl+Shift+F"
+      }
+    }
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "<all_urls>"
+      ],
+      "css": [
+        "styles/styles.css"
+      ],
+      "js": [
+        "openlib/jquery/2.1.1/jquery.min.js",
+        "scripts/obj_Modal.js",
+        "scripts/obj_Snipereader.js",
+        "scripts/main.js"
+      ],
+      "match_about_blank": true,
+      "all_frames": false,
+      "run_at": "document_end"
+    }
+  ],
+  "web_accessible_resources": [
+    "images/bar_logo.png",
+    "images/bar_search_icons.png",
+    "images/bar_up_icon.png",
+    "images/bar_down_icon.png",
+    "images/bar_settings_icons.png",
+    "images/icon_word_list_word_map.png"
+  ],
+  "permissions": [
+    "tabs",
+    "<all_urls>",
+    "background"
+  ],
+  "key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEA72eGO3JQ77N/Ct526d/EgfY3Z+zPBHJnwx2hmOJByYMJGTtojeSUlTpNVqMKUUqKLqby47QBFNco6Lh4VuuxE/vdL23RYzpoxY+26Vev/t9rp+msaGVfS9RrkTWOtTJ6K9tfK+Q/e9xXBMucOv0ZWS9dOkK6ZV+HrSxJGpe++0TxdXVeTwPNuhF5nSqtRdI4DBEow2CwyBNrlFMrAO9SibywFReWu/8Cwl0WCAJ3yK/ZCIC+3JOl4UysSR98mDmwryQQOq4uM6HSKjP81qKd3DFIfrEZ2/8Vp0LYvZNrYrYQDxrnf7UY9yJR6Sj0IH031Mfrut/OFnxIPjiotgw+zwIDAQAB"
+}

@@ -1,0 +1,56 @@
+{
+  "update_url": "https://clients2.google.com/service/update2/crx",
+  "manifest_version": 2,
+  "name": "Mendeley Web Importer",
+  "description": "Fast, convenient import of references and PDFs to your Mendeley Reference Manager library",
+  "icons": {
+    "48": "assets/logo.png"
+  },
+  "browser_action": {
+    "default_icon": "assets/logo.png",
+    "default_title": "Mendeley Web Importer"
+  },
+  "permissions": [
+    "cookies",
+    "activeTab",
+    "webRequest",
+    "webRequestBlocking",
+    "<all_urls>",
+    "storage",
+    "notifications"
+  ],
+  "background": {
+    "scripts": [
+      "pdf-locator-1.0.1.js",
+      "background.js"
+    ]
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "<all_urls>"
+      ],
+      "js": [
+        "scrape-popular-sites.js"
+      ]
+    }
+  ],
+  "commands": {
+    "_execute_browser_action": {
+      "suggested_key": {
+        "windows": "Ctrl+Shift+S",
+        "mac": "Command+Shift+S",
+        "chromeos": "Ctrl+Shift+S",
+        "linux": "Ctrl+Shift+S"
+      }
+    }
+  },
+  "content_security_policy": "script-src 'self'; object-src 'self'",
+  "incognito": "split",
+  "version": "3.0.355",
+  "web_accessible_resources": [
+    "index.html",
+    "fonts/NexusSansWebPro-Bold.*",
+    "fonts/NexusSansWebPro-Regular.*"
+  ]
+}

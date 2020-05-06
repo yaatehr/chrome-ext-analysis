@@ -1,0 +1,40 @@
+{
+  "update_url": "https://clients2.google.com/service/update2/crx",
+  "manifest_version": 2,
+  "name": "Zapier",
+  "description": "Manually trigger Zaps using Push",
+  "version": "2.8.1",
+  "icons": {
+    "128": "icon.png"
+  },
+  "background": {
+    "scripts": [
+      "browser-polyfill.min.js",
+      "background.js"
+    ]
+  },
+  "options_ui": {
+    "chrome_style": true,
+    "page": "options.html"
+  },
+  "incognito": "split",
+  "permissions": [
+    "storage",
+    "tabs",
+    "contextMenus",
+    "notifications",
+    "https://zapier.com/api/v3/*",
+    "https://*.sentry.io/*"
+  ],
+  "content_security_policy": "script-src 'self' 'unsafe-eval'; object-src 'self'",
+  "browser_action": {
+    "default_popup": "index.html",
+    "default_title": "Push by Zapier"
+  },
+  "web_accessible_resources": [
+    "*.png",
+    "*.svg",
+    "welcome.html",
+    "*.map"
+  ]
+}

@@ -1,0 +1,51 @@
+{
+  "background": {
+    "scripts": [
+      "/js/jquery.min.js",
+      "/js/analytics.js",
+      "/js/storage.js",
+      "/js/app.js",
+      "/js/chrome.js"
+    ]
+  },
+  "browser_action": {
+    "default_icon": "img/32.png",
+    "default_popup": "/popup.html",
+    "default_title": "__MSG_title__"
+  },
+  "content_scripts": [
+    {
+      "js": [
+        "/js/content.js"
+      ],
+      "css": [
+        "/css/content.css"
+      ],
+      "matches": [
+        "*://*/*"
+      ]
+    }
+  ],
+  "default_locale": "en",
+  "description": "__MSG_desc__",
+  "icons": {
+    "128": "img/128.png",
+    "32": "img/32.png",
+    "64": "img/64.png"
+  },
+  "web_accessible_resources": [
+    "img/*"
+  ],
+  "manifest_version": 2,
+  "name": "__MSG_name__",
+  "permissions": [
+    "webRequest",
+    "webRequestBlocking",
+    "*://*/*",
+    "proxy",
+    "storage",
+    "tabs"
+  ],
+  "update_url": "https://clients2.google.com/service/update2/crx",
+  "version": "2.2.2"
+}

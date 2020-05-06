@@ -1,0 +1,41 @@
+{
+  "update_url": "https://clients2.google.com/service/update2/crx",
+  "name": "Screenr",
+  "version": "0.2.19",
+  "description": "The easiest screen capture and annotation tool in the universe!",
+  "background": {
+    "persistent": false,
+    "scripts": [
+      "background.js"
+    ]
+  },
+  "icons": {
+    "16": "screenr_logo16.png",
+    "48": "screenr_logo48.png",
+    "128": "screenr_logo128.png"
+  },
+  "browser_action": {
+    "default_icon": "screenr_logo32.png",
+    "default_title": "Capture page!"
+  },
+  "permissions": [
+    "activeTab",
+    "identity"
+  ],
+  "manifest_version": 2,
+  "oauth2": {
+    "client_id": "337350846948-7a8bkjeptfp4s0p1ch84r303jp6eb20n.apps.googleusercontent.com",
+    "scopes": [
+      "openid",
+      "email",
+      "profile"
+    ]
+  },
+  "key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAu/JLO365JaTgEx1V5BXmdS5wgrXjaq48VLPlEpNjTspEHHg3sQXe6WaBNjyu3mw9RcAiKHXMbEO4Gpk0ykSvHGv0Leq9SAivo/jJbDCUA/8JDMr2wxZP7+RDWucoSyedIs1u4wwv55/45anyCEGAUytO39KcqRNMu2wzWHQzln+xtz9OqqwGeeG+hrsSUjJjsCurOcZ9HYAXfVt8sBILNYMdyphKtcUSE8C/JyTWS5JSFQa7KtXBCLHoIfzotnJmEORqMI+wZkFf27s2X19QbF72eSMWj7yboaho7RhSgAX31q9GtoMnVCH2TYcwgMfF0OuN41eoMVoI/zcm68CSCQIDAQAB",
+  "externally_connectable": {
+    "matches": [
+      "*://localhost/*",
+      "*://shots.screenr.co/*"
+    ]
+  }
+}

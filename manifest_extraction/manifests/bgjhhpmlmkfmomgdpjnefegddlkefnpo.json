@@ -1,0 +1,15 @@
+{
+  "update_url": "https://clients2.google.com/service/update2/crx",
+  "manifest_version": 2,
+  "name": "Ice Dodo 2",
+  "short_name": "Ice Dodo 2",
+  "description": "Play easily by clicking the little icon at the top right corner of your browser.",
+  "version": "1.15",
+  "browser_action": {
+    "default_icon": "assets/icon.png",
+    "default_popup": "popup.html"
+  },
+  "permissions": [
+    "storage"
+  ]
+}

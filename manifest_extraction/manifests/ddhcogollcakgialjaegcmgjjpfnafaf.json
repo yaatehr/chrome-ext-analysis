@@ -1,0 +1,56 @@
+{
+  "update_url": "https://clients2.google.com/service/update2/crx",
+  "manifest_version": 2,
+  "name": "ReadMate: Accessibility & Dyslexia Software",
+  "author": "HikeOrders",
+  "version": "1.3",
+  "short_name": "ReadMate",
+  "description": "Read,understand and navigate the content of the website easily",
+  "permissions": [
+    "*://*/*",
+    "http://*/*",
+    "https://*/*",
+    "tabs",
+    "storage",
+    "cookies",
+    "notifications",
+    "contextMenus",
+    "*://*.hkoint.co.in/*",
+    "*://*.hikeorders.com/*"
+  ],
+  "content_security_policy": "script-src-elem  'self' 'unsafe-inline' 'unsafe-eval' ;  script-src 'self' ; object-src 'self' ;",
+  "content_scripts": [
+    {
+      "js": [
+        "injector.js"
+      ],
+      "matches": [
+        "http://*/*",
+        "https://*/*",
+        "file:///*/*"
+      ],
+      "run_at": "document_idle",
+      "all_frames": false
+    }
+  ],
+  "background": {
+    "persistent": true,
+    "scripts": [
+      "background.js"
+    ]
+  },
+  "browser_action": {
+    "default_icon": "assets/logos/128.png"
+  },
+  "icons": {
+    "128": "assets/logos/128.png",
+    "16": "assets/logos/16.png",
+    "32": "assets/logos/32.png",
+    "48": "assets/logos/48.png"
+  },
+  "web_accessible_resources": [
+    "lib/*",
+    "assets/logos/*",
+    "assets/images/*"
+  ]
+}

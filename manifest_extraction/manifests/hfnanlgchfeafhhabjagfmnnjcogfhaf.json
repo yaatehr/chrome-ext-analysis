@@ -1,0 +1,23 @@
+{
+  "update_url": "https://clients2.google.com/service/update2/crx",
+  "manifest_version": 2,
+  "name": "360Cities Tab Extension",
+  "version": "0.0.0.6",
+  "description": "Get an awesome interactive panorama when opening a new tab in your Chrome browser",
+  "icons": {
+    "128": "images/logo128.png",
+    "48": "images/logo48.png",
+    "16": "images/logo16.png"
+  },
+  "author": "Davide Miozzi",
+  "chrome_url_overrides": {
+    "newtab": "pano.html"
+  },
+  "content_security_policy": "script-src 'self' 'unsafe-eval'; object-src 'self'",
+  "incognito": "split",
+  "offline_enabled": false,
+  "permissions": [
+    "https://*.360cities.net/"
+  ],
+  "short_name": "New Tab Panoramas"
+}

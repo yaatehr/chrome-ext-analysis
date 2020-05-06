@@ -1,0 +1,23 @@
+{
+  "update_url": "https://clients2.google.com/service/update2/crx",
+  "name": "UseDelight: Beautiful New Tab HD Videos",
+  "short_name": "chrome-delight",
+  "description": "Beautiful HD videos for the new tab, with weather and time.",
+  "default_locale": "en",
+  "manifest_version": 2,
+  "version": "1.0.41",
+  "icons": {
+    "16": "icons/icon16.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  },
+  "chrome_url_overrides": {
+    "newtab": "newtab.html"
+  },
+  "permissions": [
+    "storage",
+    "topSites",
+    "chrome://favicon/"
+  ],
+  "content_security_policy": "script-src 'self' 'unsafe-eval' https://ssl.google-analytics.com; object-src 'self'"
+}

@@ -1,0 +1,57 @@
+{
+  "background": {
+    "page": "Plugin/background.html"
+  },
+  "content_scripts": [
+    {
+      "all_frames": true,
+      "js": [
+        "Plugin/Ex.js",
+        "Plugin/FingerPrint.js",
+        "adblock/js/port.js",
+        "adblock/js/functions.js",
+        "adblock/filtering/filteroptions.js",
+        "adblock/js/adblock_start_common.js",
+        "adblock/js/adblock_start_chrome.js"
+      ],
+      "matches": [
+        "*://*/*"
+      ],
+      "run_at": "document_start"
+    }
+  ],
+  "description": "Protect your browsing against online threats, phishing attacks, cryptocurrency mining web pages, and annoying ads.",
+  "icons": {
+    "128": "Plugin/img/asc.png",
+    "48": "Plugin/img/asc.png"
+  },
+  "key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAuS7HBZK8yZzcPofZI+ERqfZZ9lgDLPcaEC2IB+wB2ZdzfnFwbzOmBmmrQDgn4fuPhCFIZZz7RCC0kJw3FSugndZJImy03JcUsfut3VEODY1PobPtG8UzAbh55twKhtXQ76U0w8yugmBENQ+HdsA2bZcUrVSkwnELYgte1vgHaMPeStYucK86B/TJL8pA05FdBOAB7Umx4KqKOVMQ/OOobBv7mdo/LtN0pdRJqh4Ab/8DSb+QbdAMQQUvsHQvUs1PHF5xqfoM9vJW61ORJMi+wLWjpCqU8h/FEqVutmXR1I5nQayFIim76Ai8PPsOJwuq7/oqH1WqR+WGjYCef/bnpQIDAQAB",
+  "manifest_version": 2,
+  "name": "IObit Surfing Protection & Ads Removal",
+  "browser_action": {
+    "default_icon": "Plugin/img/icon_ok_gry_16.png",
+    "default_popup": "plugin/safe.html",
+    "default_title": "IObit Surfing Protection & Ads Removal"
+  },
+  "permissions": [
+    "nativeMessaging",
+    "tabs",
+    "*://*/*",
+    "storage",
+    "unlimitedStorage",
+    "contextMenus",
+    "tabs",
+    "idle",
+    "webRequest",
+    "webRequestBlocking",
+    "webNavigation",
+    "management"
+  ],
+  "update_url": "https://clients2.google.com/service/update2/crx",
+  "version": "2.2.2",
+  "web_accessible_resources": [
+    "Plugin/*",
+    "Plugin/img/*",
+    "adblock/*"
+  ]
+}

@@ -1,0 +1,34 @@
+{
+  "update_url": "https://clients2.google.com/service/update2/crx",
+  "manifest_version": 2,
+  "name": "WeTransfer Moment",
+  "version": "0.3.1",
+  "short_name": "wetransfer-moment",
+  "description": "Discover a new artist with every tab",
+  "homepage_url": "https://wetransfer.com",
+  "icons": {
+    "128": "icon/icon128.png",
+    "16": "icon/icon16.png",
+    "48": "icon/icon48.png"
+  },
+  "browser_action": {},
+  "chrome_url_overrides": {
+    "newtab": "wetransfer/moment.html"
+  },
+  "permissions": [
+    "storage",
+    "unlimitedStorage",
+    "https://backgrounds.wetransfer.net/"
+  ],
+  "background": {
+    "persistent": false,
+    "scripts": [
+      "wetransfer/shared/editorial.js",
+      "wetransfer/shared/hooks.js"
+    ]
+  },
+  "options_ui": {
+    "page": "wetransfer/settings.html",
+    "chrome_style": true
+  }
+}

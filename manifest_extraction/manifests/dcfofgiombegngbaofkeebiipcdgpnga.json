@@ -1,0 +1,51 @@
+{
+  "update_url": "https://clients2.google.com/service/update2/crx",
+  "background": {
+    "page": "html/background.html"
+  },
+  "browser_action": {
+    "default_icon": "images/download_inactive.png",
+    "default_popup": "html/popup.html",
+    "default_title": "Video Downloader for Chrome"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "*://*/*"
+      ],
+      "js": [
+        "js/jquery-3.1.1.min.js",
+        "js/contentscript.js"
+      ],
+      "all_frames": true,
+      "run_at": "document_idle"
+    }
+  ],
+  "content_security_policy": "script-src 'self' https://www.google-analytics.com https://ssl.google-analytics.com https://apis.google.com https://ajax.googleapis.com; style-src 'self' 'unsafe-inline' 'unsafe-eval' ; connect-src *; object-src 'self' ",
+  "description": "Video Downloader for Chrome lets you download multiple versions in HD and SD from many popular video websites.",
+  "icons": {
+    "128": "images/logo.png"
+  },
+  "homepage_url": "http://videodownloader.pw",
+  "manifest_version": 2,
+  "name": "Video Downloader for Chrome",
+  "permissions": [
+    "alarms",
+    "contextMenus",
+    "privacy",
+    "storage",
+    "cookies",
+    "tabs",
+    "unlimitedStorage",
+    "webNavigation",
+    "webRequest",
+    "webRequestBlocking",
+    "http://*/*",
+    "https://*/*",
+    "notifications"
+  ],
+  "version": "5.4.0.2",
+  "web_accessible_resources": [
+    "*"
+  ]
+}

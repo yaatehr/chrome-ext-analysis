@@ -1,0 +1,82 @@
+{
+  "update_url": "https://clients2.google.com/service/update2/crx",
+  "manifest_version": 2,
+  "name": "__MSG_name__",
+  "short_name": "__MSG_short_name__",
+  "description": "__MSG_description__",
+  "default_locale": "en_US",
+  "version": "1.5.21",
+  "permissions": [
+    "tabs",
+    "webRequest",
+    "*://*/*",
+    "contextMenus",
+    "webNavigation",
+    "webRequestBlocking",
+    "storage"
+  ],
+  "browser_action": {
+    "default_popup": "options.html",
+    "default_title": "Adblock for Youtube",
+    "default_icon": "imgs/icon.png"
+  },
+  "background": {
+    "scripts": [
+      "scripts/background.js"
+    ]
+  },
+  "homepage_url": "https://adsblock.org/",
+  "icons": {
+    "64": "imgs/icon.png"
+  },
+  "content_security_policy": "script-src 'self' https://www.google-analytics.com/ 'unsafe-eval' ; object-src 'self'",
+  "content_scripts": [
+    {
+      "matches": [
+        "*://*.youtube.com/*"
+      ],
+      "js": [
+        "scripts/yte.js"
+      ],
+      "run_at": "document_end"
+    },
+    {
+      "matches": [
+        "*://*.facebook.com/*"
+      ],
+      "js": [
+        "scripts/fas.js"
+      ],
+      "run_at": "document_start"
+    },
+    {
+      "matches": [
+        "*://*.facebook.com/*"
+      ],
+      "js": [
+        "scripts/jquery.min.js",
+        "scripts/fae.js"
+      ],
+      "run_at": "document_end"
+    },
+    {
+      "matches": [
+        "*://www.youtube.com/video_getads/"
+      ],
+      "js": [
+        "scripts/yt.js"
+      ],
+      "run_at": "document_end"
+    },
+    {
+      "matches": [
+        "*://*.youtube.com/*"
+      ],
+      "js": [
+        "scripts/yts.js"
+      ],
+      "run_at": "document_start",
+      "all_frames": true
+    }
+  ]
+}

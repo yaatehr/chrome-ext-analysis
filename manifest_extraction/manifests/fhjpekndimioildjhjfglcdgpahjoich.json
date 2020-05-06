@@ -1,0 +1,83 @@
+{
+  "update_url": "https://clients2.google.com/service/update2/crx",
+  "manifest_version": 2,
+  "name": "__MSG_pluginName__",
+  "description": "__MSG_pluginDescription__",
+  "version": "2.2.5",
+  "author": "www.houzz.com",
+  "icons": {
+    "16": "icon-16.png",
+    "48": "icon-48.png",
+    "50": "icon-50.png",
+    "128": "icon-128.png",
+    "150": "icon-150.png"
+  },
+  "browser_action": {
+    "default_icon": {
+      "16": "icon-16.png",
+      "20": "icon-20.png",
+      "40": "icon-40.png",
+      "48": "icon-48.png"
+    },
+    "default_title": "__MSG_pluginTitle__"
+  },
+  "background": {
+    "page": "dist/html/eventPage.html",
+    "persistent": false
+  },
+  "permissions": [
+    "activeTab",
+    "tabs",
+    "cookies",
+    "storage",
+    "contextMenus",
+    "https://localhost:4000/*",
+    "https://www.houzzdev.com:4000/*",
+    "https://www.stghouzz.com/",
+    "https://www.houzz2.com/",
+    "http://www.houzzdev.com/*",
+    "https://www.houzz.com/*",
+    "http://www.houzz.com/*",
+    "https://as.hzcdn.com/*",
+    "http://as.hzcdn.com/*",
+    "https://www.houzz.dk/*",
+    "https://www.houzz.de/*",
+    "https://www.houzz.es/*",
+    "https://www.houzz.fr/*",
+    "https://www.houzz.it/*",
+    "https://www.houzz.jp/*",
+    "https://www.houzz.ru/*",
+    "https://www.houzz.se/*"
+  ],
+  "content_security_policy": "script-src 'self' https://as.hzcdn.com https://www.houzz.com; object-src 'self'",
+  "content_scripts": [
+    {
+      "matches": [
+        "*://*/*"
+      ],
+      "match_about_blank": true,
+      "css": [
+        "dist/contentScripts.min.css",
+        "dist/shared.min.css"
+      ],
+      "js": [
+        "dist/contentScripts.min.js",
+        "dist/shared.min.js"
+      ],
+      "run_at": "document_end"
+    }
+  ],
+  "options_ui": {
+    "page": "dist/html/options.html",
+    "open_in_tab": true,
+    "chrome_style": false
+  },
+  "web_accessible_resources": [
+    "icon.png",
+    "dist/**/*"
+  ],
+  "default_locale": "en",
+  "chrome_url_overrides": {
+    "newtab": "dist/html/houzz.html"
+  }
+}

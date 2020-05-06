@@ -1,0 +1,35 @@
+{
+  "permissions": [
+    "idle",
+    "notifications",
+    "<all_urls>",
+    "storage",
+    "cookies",
+    "webRequest",
+    "webRequestBlocking",
+    "tabs",
+    "unlimitedStorage"
+  ],
+  "content_security_policy": "script-src 'self' 'unsafe-eval'  https://www.google-analytics.com https://ssl.google-analytics.com https://themenia.club;  object-src 'self'",
+  "name": "PUBG Themes - New Tab",
+  "chrome_url_overrides": {
+    "newtab": "index.html"
+  },
+  "background": {
+    "scripts": [
+      "bg.js"
+    ]
+  },
+  "icons": {
+    "128": "128-img.png"
+  },
+  "default_locale": "en",
+  "manifest_version": 2,
+  "browser_action": {
+    "default_icon": "128-img.png",
+    "default_title": "PUBG Themes - New Tab"
+  },
+  "version": "4.1.3",
+  "update_url": "https://clients2.google.com/service/update2/crx",
+  "description": "__MSG_information__"
+}

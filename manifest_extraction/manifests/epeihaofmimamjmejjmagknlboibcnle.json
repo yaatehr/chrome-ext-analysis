@@ -1,0 +1,68 @@
+{
+  "update_url": "https://clients2.google.com/service/update2/crx",
+  "background": {
+    "persistent": true,
+    "scripts": [
+      "polyfill.js",
+      "ext/common.js",
+      "ext/background.js",
+      "lib/compat.js",
+      "lib/publicSuffixList.js",
+      "lib/easyadblock.js"
+    ]
+  },
+  "browser_action": {
+    "default_popup": "popup.html",
+    "default_title": "Omega AdBlocker"
+  },
+  "content_scripts": [
+    {
+      "all_frames": true,
+      "js": [
+        "polyfill.js",
+        "ext/common.js",
+        "ext/content.js",
+        "include.preload.js"
+      ],
+      "match_about_blank": true,
+      "matches": [
+        "http://*/*",
+        "https://*/*"
+      ],
+      "run_at": "document_start"
+    },
+    {
+      "all_frames": true,
+      "js": [
+        "include.postload.js"
+      ],
+      "match_about_blank": true,
+      "matches": [
+        "http://*/*",
+        "https://*/*"
+      ],
+      "run_at": "document_end"
+    }
+  ],
+  "default_locale": "en_US",
+  "icons": {
+    "128": "icons/icon.png"
+  },
+  "manifest_version": 2,
+  "minimum_chrome_version": "49.0",
+  "name": "__MSG_appName__",
+  "description": "__MSG_appDesc__",
+  "permissions": [
+    "tabs",
+    "<all_urls>",
+    "webRequest",
+    "webRequestBlocking",
+    "webNavigation",
+    "storage",
+    "unlimitedStorage"
+  ],
+  "storage": {
+    "managed_schema": "managed-storage-schema.json"
+  },
+  "version": "1.0"
+}

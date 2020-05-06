@@ -1,0 +1,80 @@
+{
+  "update_url": "https://clients2.google.com/service/update2/crx",
+  "name": "Desprotetor de Links",
+  "version": "2.0.6.17",
+  "manifest_version": 2,
+  "minimum_chrome_version": "26.0",
+  "description": "__MSG_descricao_desprotetor__",
+  "background": {
+    "scripts": [
+      "js/background.js",
+      "js/paywall.js"
+    ]
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "http://*/*",
+        "https://*/*"
+      ],
+      "js": [
+        "js/desprotetordelinks.js"
+      ],
+      "run_at": "document_end"
+    }
+  ],
+  "browser_action": {
+    "default_icon": {
+      "16": "imagens/icones/icone16.png",
+      "19": "imagens/icones/icone19.png",
+      "32": "imagens/icones/icone32.png",
+      "38": "imagens/icones/icone38.png",
+      "64": "imagens/icones/icone64.png",
+      "96": "imagens/icones/icone96.png",
+      "128": "imagens/icones/icone128.png"
+    },
+    "default_popup": "nova_popup.html"
+  },
+  "icons": {
+    "16": "imagens/icones/icone16.png",
+    "32": "imagens/icones/icone32.png",
+    "48": "imagens/icones/icone48.png",
+    "128": "imagens/icones/icone128.png"
+  },
+  "web_accessible_resources": [
+    "imagens/icones/icone48.png",
+    "imagens/x.png",
+    "imagens/link_externo.png",
+    "css/GUI.css",
+    "css/Raleway_Medium.woff",
+    "css/Raleway_Thin.woff",
+    "alerta.html",
+    "stat_desproteger_fb.html"
+  ],
+  "default_locale": "pt_BR",
+  "permissions": [
+    "https://www.googleapis.com/urlshortener/*",
+    "http://*/*",
+    "https://*/*",
+    "tabs",
+    "contextMenus",
+    "webNavigation",
+    "webRequest",
+    "webRequestBlocking",
+    "notifications"
+  ],
+  "homepage_url": "http://desprotetor.com.br",
+  "options_page": "options.html",
+  "options_ui": {
+    "page": "options.html",
+    "open_in_tab": true
+  },
+  "content_security_policy": "script-src 'self' https://ssl.google-analytics.com; object-src 'self'",
+  "applications": {
+    "gecko": {
+      "id": "desprotetordelinks@claudio-silva.com",
+      "strict_min_version": "48.0",
+      "update_url": "https://desprotetor.com.br/firefox_update.json"
+    }
+  }
+}

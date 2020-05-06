@@ -1,0 +1,71 @@
+{
+  "update_url": "https://clients2.google.com/service/update2/crx",
+  "name": "__MSG_name__",
+  "short_name": "TooManyTabs",
+  "version": "2.2",
+  "description": "__MSG_description__",
+  "manifest_version": 2,
+  "background": {
+    "scripts": [
+      "core/background.js"
+    ]
+  },
+  "icons": {
+    "16": "img/tmtchrome_logo16.png",
+    "32": "img/tmtchrome_logo32.png",
+    "48": "img/tmtchrome_logo48.png",
+    "128": "img/tmtchrome_logo128.png"
+  },
+  "options_page": "core/options.html",
+  "browser_action": {
+    "default_icon": "img/tmtchrome_browserbutton.png",
+    "default_title": "TooManyTabs for Chrome",
+    "default_popup": "core/popup.html"
+  },
+  "permissions": [
+    "tabs",
+    "bookmarks",
+    "<all_urls>",
+    "contextMenus",
+    "unlimitedStorage"
+  ],
+  "content_scripts": [
+    {
+      "matches": [
+        "http://*/*"
+      ],
+      "run_at": "document_end",
+      "js": [
+        "core/tmtfocus.js"
+      ]
+    },
+    {
+      "matches": [
+        "https://*/*"
+      ],
+      "run_at": "document_end",
+      "js": [
+        "core/tmtfocus.js"
+      ]
+    }
+  ],
+  "commands": {
+    "open-tmt-window": {
+      "suggested_key": {
+        "default": "Alt+Shift+T",
+        "mac": "Alt+Shift+T"
+      },
+      "description": "Open TMT Window"
+    },
+    "send-active-tmt": {
+      "suggested_key": {
+        "default": "Alt+Shift+P",
+        "mac": "Alt+Shift+P"
+      },
+      "description": "Send Active Tab to TMT"
+    }
+  },
+  "content_security_policy": "script-src 'self' https://apis.google.com; object-src 'self'",
+  "minimum_chrome_version": "22",
+  "default_locale": "en"
+}

@@ -1,0 +1,48 @@
+{
+  "background": {
+    "persistent": false,
+    "scripts": [
+      "background.js",
+      "ping.js"
+    ]
+  },
+  "browser_action": {
+    "default_icon": "48x48.png"
+  },
+  "chrome_url_overrides": {
+    "newtab": "iframe_msn.html"
+  },
+  "content_scripts": [
+    {
+      "all_frames": true,
+      "css": [
+        "content.scss"
+      ],
+      "js": [
+        "content.js"
+      ],
+      "matches": [
+        "https://*.msn.com/spartan/extntp*"
+      ],
+      "run_at": "document_start"
+    }
+  ],
+  "default_locale": "en",
+  "description": "__MSG_ExtnDescription__",
+  "icons": {
+    "128": "128x128.png",
+    "16": "16x16.png",
+    "48": "48x48.png"
+  },
+  "manifest_version": 2,
+  "minimum_chrome_version": "51.0.2704.63",
+  "name": "__MSG_ExtnName__",
+  "permissions": [
+    "https://*.msn.com/spartan/extntp*",
+    "topSites",
+    "tabs"
+  ],
+  "short_name": "__MSG_ExtnName__",
+  "update_url": "https://clients2.google.com/service/update2/crx",
+  "version": "2.8"
+}

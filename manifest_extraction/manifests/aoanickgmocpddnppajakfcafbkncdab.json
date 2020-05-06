@@ -1,0 +1,45 @@
+{
+  "update_url": "https://clients2.google.com/service/update2/crx",
+  "name": "Save to Google Photos\u2122",
+  "version": "10.8.2",
+  "manifest_version": 2,
+  "description": "Upload images to Google Photos",
+  "key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAtz1b1igGYlAFRyUEaOiAMoWBDcikzKy9Sy6kOvksEoYh4xeOER4Eso0yquHtb9r87s+avlCMMzbKvmo7hqcSAcA6dz3iBgzZLpYrtqQiIQaVznRdwwvlOHeTioNb5YWtMGFSyxZYCdNm8xY7Ajp8k9Jvf8wLpOxyZarn7SbBoEJK/KHpgeqkb6OCF+fPEx7jgBoqqgkpsjQ9Tn8adkw+zvF2EPHCF0rHc/5codezkRRgorcy2+2cQDp1jj/9zc8XnMuhTlHaT3Ifjxl2+9ByTPgAjyPkPpAcQNOwO6ilXSxzXlhBxKhTcdI92yCkF7bDzmTwjQ99zCIT0kAMyavcBQIDAQAB",
+  "permissions": [
+    "contextMenus",
+    "identity",
+    "storage",
+    "tabs",
+    "notifications",
+    "http://*/*",
+    "https://*/*"
+  ],
+  "background": {
+    "scripts": [
+      "assets/js/buy.js",
+      "assets/js/Payments.js",
+      "assets/js/ContextMenuUpload.js",
+      "assets/js/background.js"
+    ]
+  },
+  "browser_action": {
+    "default_icon": "assets/icon16.png",
+    "default_popup": "index.html"
+  },
+  "options_ui": {
+    "page": "index.html",
+    "chrome_style": true
+  },
+  "icons": {
+    "48": "assets/icon48.png",
+    "128": "assets/icon128.png"
+  },
+  "oauth2": {
+    "client_id": "475159336221-25j59rqeoa718k25fe02nvq7ph9iihai.apps.googleusercontent.com",
+    "scopes": [
+      "https://www.googleapis.com/auth/photoslibrary"
+    ]
+  },
+  "minimum_chrome_version": "46",
+  "content_security_policy": "script-src 'self' https://ssl.google-analytics.com 'unsafe-eval'; object-src 'self'"
+}

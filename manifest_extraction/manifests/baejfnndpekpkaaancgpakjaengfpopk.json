@@ -1,0 +1,51 @@
+{
+  "update_url": "https://clients2.google.com/service/update2/crx",
+  "background": {
+    "page": "html/background.html"
+  },
+  "browser_action": {
+    "default_icon": "images/download_inactive.png",
+    "default_popup": "html/popup.html",
+    "default_title": "Video Downloader Plus"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "*://*/*"
+      ],
+      "js": [
+        "js/jquery-3.1.1.min.js",
+        "js/contentscript.js"
+      ],
+      "all_frames": true,
+      "run_at": "document_idle"
+    }
+  ],
+  "content_security_policy": "script-src 'self' https://www.google-analytics.com https://ssl.google-analytics.com https://apis.google.com https://ajax.googleapis.com; style-src 'self' 'unsafe-inline' 'unsafe-eval' ; connect-src *; object-src 'self' ",
+  "description": "Video Downloader Plus - Download MP4, MOV, AVI, ASF, MPG.",
+  "icons": {
+    "128": "images/logo.png"
+  },
+  "homepage_url": "http://video-downloader.club?utm_source=extension&utm_medium=browser_action&utm_campaign=homepage_clicked",
+  "manifest_version": 2,
+  "name": "Video Downloader Plus",
+  "permissions": [
+    "alarms",
+    "contextMenus",
+    "privacy",
+    "storage",
+    "cookies",
+    "tabs",
+    "unlimitedStorage",
+    "webNavigation",
+    "webRequest",
+    "webRequestBlocking",
+    "http://*/*",
+    "https://*/*",
+    "notifications"
+  ],
+  "version": "7.2.0.0",
+  "web_accessible_resources": [
+    "*"
+  ]
+}

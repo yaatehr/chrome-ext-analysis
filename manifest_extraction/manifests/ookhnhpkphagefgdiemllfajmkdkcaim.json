@@ -1,0 +1,44 @@
+{
+  "update_url": "https://clients2.google.com/service/update2/crx",
+  "manifest_version": 2,
+  "name": "iNinja VPN & Proxy, VPN to Unblock any sites",
+  "description": "__MSG_appDesc__",
+  "default_locale": "en",
+  "version": "2.14.8",
+  "icons": {
+    "128": "img/icon64.png"
+  },
+  "permissions": [
+    "storage",
+    "proxy",
+    "alarms",
+    "notifications",
+    "*://*/*",
+    "webRequest",
+    "webRequestBlocking",
+    "privacy"
+  ],
+  "optional_permissions": [
+    "management"
+  ],
+  "background": {
+    "scripts": [
+      "js/libs/jquery-3.1.1.min.js",
+      "js/libs/uuid.js",
+      "js/libs/platform.js",
+      "js/modules/config.js",
+      "js/modules/utils.js",
+      "js/modules/error-catcher.js",
+      "js/modules/feedback.js",
+      "js/modules/cdn-tester.js",
+      "js/modules/stats.js",
+      "js/background.js",
+      "js/modules/reverse.js"
+    ]
+  },
+  "browser_action": {
+    "default_title": "__MSG_appName__",
+    "default_icon": "img/icon64-gray.png",
+    "default_popup": "popup.html"
+  }
+}

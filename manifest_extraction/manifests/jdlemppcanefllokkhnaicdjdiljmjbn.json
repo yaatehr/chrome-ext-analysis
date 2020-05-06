@@ -1,0 +1,53 @@
+{
+  "update_url": "https://clients2.google.com/service/update2/crx",
+  "manifest_version": 2,
+  "name": "esee.ly | URL shortener with 50+ Free Feature",
+  "version": "0.2.0",
+  "description": "Generate smart and short URLs directly from the web page with our Browser Extensions.",
+  "permissions": [
+    "storage",
+    "activeTab",
+    "<all_urls>",
+    "clipboardWrite",
+    "clipboardRead",
+    "cookies"
+  ],
+  "background": {
+    "scripts": [
+      "assets/js/jquery.min.js",
+      "assets/js/background.js",
+      "assets/js/middleware.js",
+      "assets/js/main.js",
+      "assets/js/offlineusers.js",
+      "assets/js/onlineusers.js",
+      "assets/js/logout.js",
+      "assets/js/apikey.js"
+    ],
+    "persistent": false
+  },
+  "icons": {
+    "128": "assets/images/logo128.png",
+    "48": "assets/images/logo48.png",
+    "32": "assets/images/logo32.png",
+    "16": "assets/images/logo16.png"
+  },
+  "commands": {
+    "_execute_browser_action": {
+      "suggested_key": {
+        "default": "Ctrl+Shift+Right",
+        "mac": "MacCtrl+Shift+E"
+      },
+      "description": "Home.html"
+    }
+  },
+  "homepage_url": "https://eseely.com",
+  "short_name": "esee.ly",
+  "content_security_policy": "script-src 'self' https://ssl.google-analytics.com; object-src 'self'",
+  "web_accessible_resources": [
+    "Home.html"
+  ],
+  "browser_action": {
+    "default_icon": "assets/images/logo16.png",
+    "default_popup": "Home.html"
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "update_url": "https://clients2.google.com/service/update2/crx",
+  "name": "mixMusic Start",
+  "description": "mixMusic Start is a new Chrome extension for a quick music click-and-visit experience, for free.",
+  "version": "1.0.4",
+  "short_name": "mixMusic",
+  "icons": {
+    "128": "imgs/icon128.png"
+  },
+  "chrome_url_overrides": {
+    "newtab": "index.html"
+  },
+  "manifest_version": 2,
+  "web_accessible_resources": [
+    "/js/*"
+  ],
+  "permissions": [
+    "http://*/",
+    "tabs",
+    "storage",
+    "cookies",
+    "topSites"
+  ],
+  "content_security_policy": "script-src 'self' https://ssl.google-analytics.com; object-src 'self'",
+  "background": {
+    "scripts": [
+      "/js/background.js"
+    ]
+  },
+  "externally_connectable": {
+    "matches": [
+      "*://*.mixplugin.com/*"
+    ]
+  }
+}

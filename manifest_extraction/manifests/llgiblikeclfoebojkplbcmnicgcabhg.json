@@ -1,0 +1,26 @@
+{
+  "update_url": "https://clients2.google.com/service/update2/crx",
+  "version": "1.4.0",
+  "name": "Bloomberg",
+  "manifest_version": 2,
+  "description": "Bring the power of Bloomberg to any news story, anywhere.",
+  "browser_action": {
+    "default_title": "Bloomberg"
+  },
+  "background": {
+    "page": "background.html"
+  },
+  "web_accessible_resources": [
+    "inject.html"
+  ],
+  "icons": {
+    "16": "img/icon-16.png",
+    "48": "img/icon-48.png",
+    "128": "img/icon-128.png"
+  },
+  "permissions": [
+    "tabs",
+    "*://*/*"
+  ],
+  "content_security_policy": "default-src 'self'; script-src 'self' https://www.wikidata.org https://en.wikipedia.org https://www.google-analytics.com 'unsafe-eval'; connect-src http://localhost:3000 https://localhost:3000 https://mobapi.bloomberg.com; style-src * 'unsafe-inline' 'self' blob:; img-src 'self' data: http://logo.clearbit.com/ https://www.bloomberg.com https://assets.bwbx.io https://commons.wikimedia.org; font-src https://assets.bwbx.io;"
+}

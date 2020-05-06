@@ -1,0 +1,113 @@
+{
+  "update_url": "https://clients2.google.com/service/update2/crx",
+  "manifest_version": 2,
+  "name": "RoboForm Password Manager",
+  "short_name": "RoboForm",
+  "version": "9.0.1.5",
+  "description": "RoboForm, the #1 ranked Password Manager makes your life easier by remembering passwords and logging you into websites automatically",
+  "homepage_url": "http://www.roboform.com",
+  "permissions": [
+    "storage",
+    "tabs",
+    "bookmarks",
+    "privacy",
+    "webRequest",
+    "webRequestBlocking",
+    "webNavigation",
+    "nativeMessaging",
+    "downloads",
+    "http://*/*",
+    "https://*/*",
+    "chrome://favicon/",
+    "contextMenus"
+  ],
+  "default_locale": "en",
+  "icons": {
+    "16": "robo16.png",
+    "32": "robo32.png",
+    "48": "robo48.png",
+    "128": "robo128.png"
+  },
+  "browser_action": {
+    "default_icon": "rfdis16.png",
+    "default_title": "Click this button to show RoboForm commands"
+  },
+  "background": {
+    "scripts": [
+      "identity-resources.js",
+      "pwd-dict.js",
+      "utils.js",
+      "rf-api-lib.js",
+      "rf-scram.js",
+      "repository.js",
+      "identity.js",
+      "ofs.js",
+      "rf-pbkdf2.js",
+      "pako-min.js",
+      "md5-min.js",
+      "BigInteger.min.js",
+      "crypto.js",
+      "aes.js",
+      "jsbn.js",
+      "jsbn2.js",
+      "prng4.js",
+      "rng.js",
+      "rsa.js",
+      "rsa2.js",
+      "sjcl.js",
+      "base.js",
+      "common.js",
+      "storage.js",
+      "server-connector.js",
+      "localization.js",
+      "policy-set.js",
+      "background.js",
+      "background-nm.js",
+      "background-sa.js",
+      "proxy-rfo.js",
+      "filler.js",
+      "proxy-chrome-nm.js",
+      "background-webext-nm.js",
+      "background-webext-sa.js",
+      "background-chrome.js",
+      "startup.js",
+      "0.js",
+      "1.js",
+      "main.js"
+    ]
+  },
+  "options_page": "options.html",
+  "content_scripts": [
+    {
+      "all_frames": true,
+      "match_about_blank": true,
+      "run_at": "document_start",
+      "js": [
+        "0.js",
+        "1.js",
+        "inject.js"
+      ],
+      "matches": [
+        "http://*/*",
+        "https://*/*",
+        "file:///*"
+      ]
+    }
+  ],
+  "web_accessible_resources": [
+    "autosave-ui.html",
+    "message-box.html",
+    "content-dialog.js",
+    "content-dialog.css",
+    "af2-templates.css",
+    "autosave-notification.css",
+    "autosave-new-account-notification.css",
+    "autosave-login-request.css",
+    "password-request.png",
+    "robo16.png",
+    "robo32.png",
+    "list.svg",
+    "add.svg",
+    "settings.svg"
+  ]
+}

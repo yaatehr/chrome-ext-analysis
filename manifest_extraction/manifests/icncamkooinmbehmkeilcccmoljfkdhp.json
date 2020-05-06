@@ -1,0 +1,44 @@
+{
+  "update_url": "http://clients2.google.com/service/update2/crx",
+  "name": "Wolfram|Alpha (Official)",
+  "version": "1.2.2",
+  "description": "Instantly query Wolfram|Alpha from any page or tab.",
+  "options_page": "options.html",
+  "icons": {
+    "16": "images/icon16.png",
+    "48": "images/icon48.png",
+    "128": "images/icon128.png"
+  },
+  "omnibox": {
+    "keyword": "="
+  },
+  "browser_action": {
+    "default_icon": "images/toolbar-spikey-19px.png",
+    "default_popup": "wolframalpha.html"
+  },
+  "background": {
+    "scripts": [
+      "src/background.js",
+      "src/jquery-1.7.2.min.js"
+    ]
+  },
+  "content_scripts": [
+    {
+      "js": [
+        "src/installed_inserter.js"
+      ],
+      "matches": [
+        "http://*.wolframalpha.com/*",
+        "https://*.wolframalpha.com/*",
+        "http://*.wolfram.com/*",
+        "https://*.wolfram.com/*"
+      ]
+    }
+  ],
+  "permissions": [
+    "contextMenus",
+    "tabs",
+    "http://*.wolframalpha.com/*"
+  ],
+  "manifest_version": 2
+}

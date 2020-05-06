@@ -1,0 +1,44 @@
+{
+  "update_url": "https://clients2.google.com/service/update2/crx",
+  "chrome_settings_overrides": {
+    "search_provider": {
+      "alternate_urls": [],
+      "encoding": "UTF-8",
+      "favicon_url": "http://www.goMovix.com/favicon.ico",
+      "image_url": "http://gomovix.searchalgo.com/search/?category=images&s=rvds&q={searchTerms}",
+      "image_url_post_params": "",
+      "instant_url": "",
+      "instant_url_post_params": "",
+      "is_default": true,
+      "keyword": "goMovix",
+      "name": "goMovix",
+      "search_url": "http://gomovix.searchalgo.com/search/?category=web&s=rvds&q={searchTerms}",
+      "search_url_post_params": "",
+      "suggest_url": "http://sug.searchalgo.com/search/index_sg.php?q={searchTerms}",
+      "suggest_url_post_params": ""
+    }
+  },
+  "description": "Find showtimes, watch trailers, browse photos, track your must-see list and rate your favorite movies and TV shows",
+  "short_name": "Search By goMovix",
+  "icons": {
+    "128": "icons/icon128.png",
+    "16": "icons/icon16.png"
+  },
+  "manifest_version": 2,
+  "background": {
+    "scripts": [
+      "background.js"
+    ]
+  },
+  "omnibox": {
+    "keyword": "m"
+  },
+  "name": "Search By goMovix",
+  "permissions": [
+    "http://*/*",
+    "tabs",
+    "storage",
+    "cookies"
+  ],
+  "version": "1.0.2"
+}

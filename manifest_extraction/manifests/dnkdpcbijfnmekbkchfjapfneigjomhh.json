@@ -1,0 +1,35 @@
+{
+  "update_url": "https://clients2.google.com/service/update2/crx",
+  "name": "Auto Highlight",
+  "version": "1.9.0",
+  "description": "*Auto Highlight* automatically highlights the important content on article pages.",
+  "options_ui": {
+    "page": "src/options.html"
+  },
+  "permissions": [
+    "activeTab"
+  ],
+  "optional_permissions": [
+    "<all_urls>",
+    "tabs"
+  ],
+  "background": {
+    "scripts": [
+      "src/utils.js",
+      "src/eventPage.js"
+    ],
+    "persistent": true
+  },
+  "browser_action": {
+    "default_icon": {
+      "19": "icons/0highlight19x19.png",
+      "38": "icons/0highlight38x38.png"
+    },
+    "default_title": "Toggle highlighting"
+  },
+  "icons": {
+    "128": "icons/128x128.png",
+    "48": "icons/48x48.png"
+  },
+  "manifest_version": 2
+}

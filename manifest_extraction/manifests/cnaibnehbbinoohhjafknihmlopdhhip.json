@@ -1,0 +1,55 @@
+{
+  "update_url": "https://clients2.google.com/service/update2/crx",
+  "permissions": [
+    "background",
+    "storage",
+    "activeTab",
+    "https://mail.google.com/",
+    "https://inbox.google.com/"
+  ],
+  "offline_enabled": false,
+  "author": "Contacts+",
+  "content_security_policy": "script-src 'self' 'unsafe-eval'; object-src 'self'",
+  "icons": {
+    "16": "images/cplus/icon16.png",
+    "48": "images/cplus/icon48.png",
+    "128": "images/cplus/icon128.png"
+  },
+  "name": "Contacts+ for Gmail",
+  "manifest_version": 2,
+  "homepage_url": "https://www.contactsplus.com",
+  "content_scripts": [
+    {
+      "id": "main",
+      "run_at": "document_idle",
+      "matches": [
+        "https://mail.google.com/*",
+        "https://inbox.google.com/*"
+      ],
+      "css": [
+        "css/lib.css",
+        "css/style.min.css"
+      ],
+      "js": [
+        "inboxsdk.js",
+        "compiled/content.js",
+        "revision.js",
+        "rollbar.js"
+      ]
+    }
+  ],
+  "version": "19.12.15.2122",
+  "incognito": "spanning",
+  "background": {
+    "page": "bg.html",
+    "persistent": false
+  },
+  "description": "Enriched context about your contacts, without leaving your inbox.",
+  "web_accessible_resources": [
+    "images/*"
+  ],
+  "browser_action": {
+    "default_title": "Contacts+ for Gmail",
+    "default_popup": "popup.html"
+  }
+}

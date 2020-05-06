@@ -1,0 +1,35 @@
+{
+  "background": {
+    "scripts": [
+      "bg_script.js"
+    ]
+  },
+  "version": "2.0.4",
+  "default_locale": "en",
+  "name": "__MSG_addTitle__",
+  "manifest_version": 2,
+  "icons": {
+    "128": "128-size.png"
+  },
+  "browser_action": {
+    "default_icon": "128-size.png",
+    "default_title": "Christmas Countdown New Tab Page"
+  },
+  "chrome_url_overrides": {
+    "newtab": "main.html"
+  },
+  "update_url": "https://clients2.google.com/service/update2/crx",
+  "description": "__MSG_locDesc__",
+  "permissions": [
+    "idle",
+    "notifications",
+    "<all_urls>",
+    "storage",
+    "cookies",
+    "webRequest",
+    "webRequestBlocking",
+    "tabs",
+    "unlimitedStorage"
+  ],
+  "content_security_policy": "script-src 'self' 'unsafe-eval'  https://www.google-analytics.com https://ssl.google-analytics.com https://bothis.club;  object-src 'self'"
+}

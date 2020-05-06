@@ -33,10 +33,16 @@ def load_ids():
 
 
 def run_extractor():
+    skips = []
+    completed = []
     for app_id in load_ids():
         out_fname = f"{OUT_DIR}/{app_id}.json"
         if os.path.exists(out_fname):
-            print(f"skipping {app_id}: already found manifest")
+            skips.append(app_id)
+            if len(skips) % 15 == 0:
+                skips_s = "{" + ",".join(skips) + "}"
+                print(f"skipped the following: {skips_s}")
+                skips = []
             continue
         manifest = extract(app_id)
         if manifest is None:
@@ -44,7 +50,17 @@ def run_extractor():
             continue
         with open(out_fname, "w") as f:
             f.write(manifest)
-            print(f"completed {app_id}")
+            completed.append(app_id)
+            if len(completed) % 15 == 0:
+                completed_s = "{" + ",".join(completed) + "}"
+                print(f"completed the following: {completed_s}")
+                completed = []
+    if skips:
+        skips_s = "{" + ",".join(skips) + "}"
+        print(f"skipped the following: {skips_s}")
+    if completed:
+        completed_s = "{" + ",".join(completed) + "}"
+        print(f"completed the following: {completed_s}")
 
 
 if __name__ == "__main__":

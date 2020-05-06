@@ -1,0 +1,94 @@
+{
+  "update_url": "https://clients2.google.com/service/update2/crx",
+  "name": "Home - New Tab Page",
+  "description": "A homepage you will fall in love with! Notifications, badges, recently closed tabs, quick notes, calendar and more.",
+  "version": "2.9.13.1",
+  "minimum_chrome_version": "49",
+  "background": {
+    "page": "pages/background.html"
+  },
+  "chrome_url_overrides": {
+    "newtab": "index.html"
+  },
+  "icons": {
+    "128": "icons/home.png",
+    "48": "icons/home.png",
+    "32": "icons/home/home32.png",
+    "16": "icons/home/home16.png"
+  },
+  "permissions": [
+    "bookmarks",
+    "tabs",
+    "management",
+    "notifications",
+    "chrome://favicon/",
+    "http://*/*",
+    "https://*/*",
+    "<all_urls>",
+    "webNavigation",
+    "webRequest",
+    "webRequestBlocking",
+    "storage",
+    "unlimitedStorage",
+    "cookies",
+    "idle",
+    "system.cpu",
+    "system.memory",
+    "identity",
+    "tabCapture"
+  ],
+  "optional_permissions": [
+    "history",
+    "topSites"
+  ],
+  "content_scripts": [
+    {
+      "matches": [
+        "http://*/*",
+        "https://*/*"
+      ],
+      "js": [
+        "js/content_script.js"
+      ],
+      "run_at": "document_start",
+      "all_frames": true
+    },
+    {
+      "matches": [
+        "*://*.homenewtabsearch.com/*",
+        "*://homenewtabsearch.com.s3-website-us-east-1.amazonaws.com/*"
+      ],
+      "js": [
+        "js/search/search_content_script.js"
+      ],
+      "run_at": "document_start",
+      "all_frames": true
+    },
+    {
+      "matches": [
+        "https://www.facebook.com/ajax/mercury/threadlist_info.php*"
+      ],
+      "js": [
+        "3rd-party/facebook/facebook_unread.js"
+      ],
+      "run_at": "document_start",
+      "all_frames": true
+    }
+  ],
+  "manifest_version": 2,
+  "content_security_policy": "script-src 'self' https://www.homenewtab.com https://homenewtab.com.s3-website-us-east-1.amazonaws.com https://www.google-analytics.com https://apis.google.com/ https://searchmake.com https://connect.facebook.net https://www.googleadservices.com/ https://autocomplete.wunderground.com https://platform.twitter.com; object-src 'self'",
+  "web_accessible_resources": [
+    "css/search_badge.css"
+  ],
+  "key": "MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQDQLTrw3Ol43TC482YiOAdhMeAa9n7pxO6y3LBor1qAZYq6Me0Psd48nSdB1mPtm1FHVfaEcCOlolZwirLe0YhpeGXNqpMqWnqAZxgJ/TcBpvpxbGqWFpemkGepVKD9szurGxaiLvFfz5OZCbkeUVW3/+RlMw0wMKZwc86nZNIHlwIDAQAB",
+  "oauth2": {
+    "client_id": "1024356103437-t90vgokgf8d7fi0cef1imopvgsh02pvl.apps.googleusercontent.com",
+    "scopes": [
+      "https://www.googleapis.com/auth/calendar.readonly"
+    ]
+  },
+  "offline_enabled": true,
+  "browser_action": {
+    "default_title": "Home - New Tab Page"
+  }
+}

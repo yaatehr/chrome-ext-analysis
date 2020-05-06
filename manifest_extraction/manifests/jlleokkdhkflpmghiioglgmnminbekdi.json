@@ -1,0 +1,36 @@
+{
+  "update_url": "https://clients2.google.com/service/update2/crx",
+  "name": "GIPHY for Chrome",
+  "version": "2.2",
+  "description": "Bring the power of a GIF search engine anywhere on the web. Respond to emails, tweets and more with GIFs and Stickers.",
+  "manifest_version": 2,
+  "browser_action": {
+    "default_popup": "index.html",
+    "default_title": "GIPHY for Chrome",
+    "default_icon": {
+      "19": "/img/giphy_icon_19.png",
+      "38": "/img/giphy_icon_38.png"
+    }
+  },
+  "icons": {
+    "128": "/img/128x128_vertical.png"
+  },
+  "web_accessible_resources": [
+    "/img/*"
+  ],
+  "permissions": [
+    "contextMenus"
+  ],
+  "content_scripts": [
+    {
+      "matches": [
+        "https://www.google-analytics.com/"
+      ],
+      "js": [
+        "./index.js"
+      ],
+      "run_at": "document_end"
+    }
+  ],
+  "content_security_policy": "script-src 'self' https://www.google-analytics.com/analytics.js; object-src 'self'"
+}

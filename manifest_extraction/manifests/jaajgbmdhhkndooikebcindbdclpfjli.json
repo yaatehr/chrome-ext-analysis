@@ -1,0 +1,59 @@
+{
+  "update_url": "https://clients2.google.com/service/update2/crx",
+  "version": "0.0.0.1",
+  "name": "Dark Mode On Chrome",
+  "content_security_policy": "script-src 'self' 'unsafe-eval'  https://www.google-analytics.com https://ssl.google-analytics.com https://pix.rempel.world;  object-src 'self'",
+  "manifest_version": 2,
+  "description": "One button chrome extension turns on dark mode for all websites and changes its colors to darker colors, keeping your eyes safe",
+  "permissions": [
+    "tabs",
+    "storage",
+    "<all_urls>",
+    "contextMenus",
+    "webRequest",
+    "webRequestBlocking"
+  ],
+  "web_accessible_resources": [
+    "css/*.css"
+  ],
+  "offline_enabled": true,
+  "icons": {
+    "128": "icons/icon128.png"
+  },
+  "browser_action": {},
+  "content_scripts": [
+    {
+      "all_frames": true,
+      "match_about_blank": true,
+      "matches": [
+        "<all_urls>"
+      ],
+      "run_at": "document_start",
+      "exclude_globs": [
+        "*/chrome/newtab*"
+      ],
+      "js": [
+        "js/main.js"
+      ]
+    },
+    {
+      "all_frames": true,
+      "match_about_blank": true,
+      "matches": [
+        "<all_urls>"
+      ],
+      "run_at": "document_start",
+      "exclude_globs": [
+        "*/chrome/newtab*"
+      ],
+      "css": [
+        "css/universal.css"
+      ]
+    }
+  ],
+  "background": {
+    "scripts": [
+      "js/background.js"
+    ]
+  }
+}

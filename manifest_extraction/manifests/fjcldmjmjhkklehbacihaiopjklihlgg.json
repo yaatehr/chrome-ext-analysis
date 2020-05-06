@@ -1,0 +1,56 @@
+{
+  "update_url": "https://clients2.google.com/service/update2/crx",
+  "name": "News Feed Eradicator for Facebook",
+  "version": "1.2.3",
+  "description": "Find yourself spending too much time on Facebook? Eradicate distractions by replacing your entire news feed with an inspiring quote",
+  "manifest_version": 2,
+  "permissions": [
+    "storage",
+    "http://www.facebook.com/*",
+    "https://www.facebook.com/*",
+    "http://web.facebook.com/*",
+    "https://web.facebook.com/*"
+  ],
+  "icons": {
+    "16": "icon16.jpg",
+    "48": "icon48.jpg",
+    "128": "icon128.jpg"
+  },
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "@news-feed-eradicator"
+    }
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "http://www.facebook.com/*",
+        "https://www.facebook.com/*",
+        "http://web.facebook.com/*",
+        "https://web.facebook.com/*"
+      ],
+      "js": [
+        "intercept.js"
+      ],
+      "css": [
+        "eradicate.css"
+      ],
+      "run_at": "document_start"
+    },
+    {
+      "matches": [
+        "http://www.facebook.com/*",
+        "https://www.facebook.com/*",
+        "http://web.facebook.com/*",
+        "https://web.facebook.com/*"
+      ],
+      "js": [
+        "eradicate.js"
+      ],
+      "css": [
+        "eradicate.css"
+      ],
+      "run_at": "document_idle"
+    }
+  ]
+}

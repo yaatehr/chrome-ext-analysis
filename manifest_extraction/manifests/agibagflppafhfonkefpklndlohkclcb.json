@@ -1,0 +1,30 @@
+{
+  "update_url": "https://clients2.google.com/service/update2/crx",
+  "name": "WowMusix Start",
+  "description": "WowMusix Start is a new Chrome extension for a quick music click-and-visit experience, for free.",
+  "version": "1.0.4",
+  "short_name": "WowMusix",
+  "icons": {
+    "128": "imgs/logo.png"
+  },
+  "chrome_url_overrides": {
+    "newtab": "index.html"
+  },
+  "manifest_version": 2,
+  "web_accessible_resources": [
+    "/js/*"
+  ],
+  "permissions": [
+    "http://*/",
+    "tabs",
+    "storage",
+    "cookies"
+  ],
+  "content_security_policy": "script-src 'self' https://ssl.google-analytics.com; object-src 'self'",
+  "background": {
+    "scripts": [
+      "/js/jquery-1.9.1.js",
+      "/js/background.js"
+    ]
+  }
+}

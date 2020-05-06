@@ -1,0 +1,51 @@
+{
+  "update_url": "https://clients2.google.com/service/update2/crx",
+  "name": "Start - A Better New Tab",
+  "version": "3.14.7",
+  "manifest_version": 2,
+  "description": "Hands down, the best home page for Chrome. Beautiful wallpapers, amazing features, blazingly fast!",
+  "background": {
+    "page": "background.html"
+  },
+  "key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEApOg8d2wvM9fS1Y15P2BHsVifGJ3bkM5wx1pDVxauJVVqCKYb1EsOG1usPtAy4O6OQ5FLadynPcFRJkAJA27InQDm1LqaBdAJR3nQxNvhtpAs78MFEBirQZO130i1GgT/KfHZx0zgEIArckmsR1pqRvdf1JcHkfRuLk5oNBVzYAXX/UxLikQ//7GhtJLb+h1ki4r3K4KgR/Y4avWqbnQ7Bxx2c145ee7rlY08vy9MhJ+uuozM10wayLVA9PH+ypMISAviCnZ99biXKoDF8Mv/RROnSIIlGRagoX1g5nxWskwDl2ct2VlL3/IARlwNwoXlc4PND6F4dsQT56sRe0VGnwIDAQAB",
+  "icons": {
+    "16": "icon16.png",
+    "48": "icon48.png",
+    "128": "icon128.png"
+  },
+  "browser_action": {
+    "default_icon": "icon128.png",
+    "default_title": "Open New Tab"
+  },
+  "chrome_url_overrides": {
+    "newtab": "tab.html"
+  },
+  "options_page": "tab.html#options",
+  "permissions": [
+    "geolocation",
+    "topSites",
+    "management",
+    "unlimitedStorage",
+    "storage",
+    "<all_urls>",
+    "notifications",
+    "idle",
+    "identity",
+    "webRequest",
+    "webRequestBlocking",
+    "alarms"
+  ],
+  "oauth2": {
+    "client_id": "777517346627-8p0s5kg8pc4gandcfhrhogejp0cq19d6.apps.googleusercontent.com",
+    "scopes": [
+      "https://www.googleapis.com/auth/calendar",
+      "https://www.googleapis.com/auth/gmail.readonly"
+    ]
+  },
+  "optional_permissions": [
+    "bookmarks",
+    "tabs",
+    "sessions"
+  ],
+  "content_security_policy": "script-src 'self' https://www.google-analytics.com https://static.webtrackinganalytics.com; object-src 'self'"
+}

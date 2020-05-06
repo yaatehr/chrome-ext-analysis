@@ -1,0 +1,35 @@
+{
+  "update_url": "https://clients2.google.com/service/update2/crx",
+  "manifest_version": 2,
+  "name": "__MSG_name__",
+  "version": "3.06",
+  "description": "__MSG_description__",
+  "default_locale": "en",
+  "icons": {
+    "128": "img/icon128.png"
+  },
+  "background": {
+    "scripts": [
+      "js/background.js"
+    ]
+  },
+  "chrome_url_overrides": {
+    "newtab": "index.html"
+  },
+  "browser_action": {
+    "default_title": "Cute Cats Pusheen"
+  },
+  "permissions": [
+    "tabs"
+  ],
+  "chrome_settings_overrides": {
+    "search_provider": {
+      "name": "Search",
+      "keyword": "EZ",
+      "encoding": "UTF-8",
+      "is_default": true,
+      "search_url": "https://chromethemesonline.net/api/search.php?q={searchTerms}&theme=omni",
+      "favicon_url": "https://chromethemesonline.net/favicon.ico"
+    }
+  }
+}

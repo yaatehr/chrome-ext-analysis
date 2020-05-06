@@ -1,0 +1,72 @@
+{
+  "update_url": "https://clients2.google.com/service/update2/crx",
+  "name": "Calendly: Meeting Scheduling Software",
+  "version": "1.16.6.0",
+  "version_name": "v1.16.6.0 - b1494ab",
+  "manifest_version": 2,
+  "description": "Schedule meetings without the hassle. Never get double booked. Calendly works with your calendar to automate appointment scheduling.",
+  "icons": {
+    "16": "icons/icon-16.png",
+    "48": "icons/icon-48.png",
+    "128": "icons/icon-128.png"
+  },
+  "options_page": "options.html",
+  "background": {
+    "scripts": [
+      "browser-polyfill.js",
+      "javascripts/background.js"
+    ],
+    "persistent": true
+  },
+  "permissions": [
+    "tabs",
+    "http://*/*",
+    "https://*/*",
+    "cookies",
+    "clipboardWrite",
+    "storage"
+  ],
+  "content_scripts": [
+    {
+      "matches": [
+        "https://mail.google.com/*"
+      ],
+      "js": [
+        "browser-polyfill.js",
+        "javascripts/gMenu.content.js"
+      ],
+      "run_at": "document_end",
+      "all_frames": false
+    },
+    {
+      "matches": [
+        "<all_urls>"
+      ],
+      "js": [
+        "browser-polyfill.js",
+        "javascripts/iframeManager.content.js"
+      ],
+      "run_at": "document_end",
+      "all_frames": false
+    }
+  ],
+  "content_security_policy": "script-src 'self' https://*.segment.com https://*.intercom.io https://*.intercomcdn.com https://*.heapanalytics.com; object-src 'self';",
+  "browser_action": {
+    "default_icon": {
+      "19": "icons/icon-19.png",
+      "38": "icons/icon-38.png"
+    },
+    "default_title": "Calendly: Meeting Scheduling Software"
+  },
+  "web_accessible_resources": [
+    "index.html",
+    "welcome.html",
+    "stylesheets/chosen-sprite.png",
+    "stylesheets/chosen-sprite@2x.png",
+    "icons/*.*",
+    "images/*.*",
+    "fonts/*.*",
+    "assets/*.*",
+    "javascripts/gMenu.inline.js"
+  ]
+}

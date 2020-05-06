@@ -1,0 +1,53 @@
+{
+  "update_url": "https://clients2.google.com/service/update2/crx",
+  "manifest_version": 2,
+  "name": "Power Thesaurus",
+  "short_name": "PT",
+  "description": "View synonyms and antonyms by button in toolbar, right-click or by word selection on any page.",
+  "default_locale": "en",
+  "version": "3.0.7",
+  "permissions": [
+    "storage",
+    "contextMenus",
+    "tabs"
+  ],
+  "options_ui": {
+    "page": "options.html"
+  },
+  "background": {
+    "page": "background.html"
+  },
+  "browser_action": {
+    "default_popup": "popup.html"
+  },
+  "content_scripts": [
+    {
+      "all_frames": false,
+      "matches": [
+        "*://*/*"
+      ],
+      "js": [
+        "runtime.js",
+        "vendors-background-content-options-popup.js",
+        "vendors-content-options-popup.js",
+        "content.js"
+      ],
+      "css": [
+        "styles/palette.css",
+        "styles/variables.css"
+      ]
+    }
+  ],
+  "icons": {
+    "16": "images/icon16.png",
+    "48": "images/icon48.png",
+    "64": "images/icon64.png",
+    "128": "images/icon128.png"
+  },
+  "content_security_policy": "script-src 'self' https://www.googletagmanager.com https://ssl.google-analytics.com; object-src 'self'",
+  "web_accessible_resources": [
+    "images/*",
+    "styles/*",
+    "*.css"
+  ]
+}

@@ -1,0 +1,81 @@
+{
+  "manifest_version": 2,
+  "name": "Notebook Web Clipper",
+  "description": "Clear the clutter. Clip the web. Save to Notebook.",
+  "version": "1.4.27",
+  "update_url": "http://clients2.google.com/service/update2/crx",
+  "background": {
+    "scripts": [
+      "vendor/jquery/jquery-2.1.1.min.js",
+      "vendor/readability/Readability.js",
+      "vendor/zoho/annotator/annotator.js",
+      "vendor/readability/JSDOMParser.js",
+      "js/background.js",
+      "js/note-utils.js",
+      "js/context-menu.js",
+      "vendor/sanitize/sanitize.js",
+      "js/sanitize-util.js"
+    ],
+    "persistent": true
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "http://*/*",
+        "https://*/*"
+      ],
+      "js": [
+        "vendor/jquery/jquery-2.1.1.min.js",
+        "js/content-script.js",
+        "vendor/readability/Readability.js",
+        "vendor/readability/JSDOMParser.js",
+        "vendor/sanitize/sanitize.js",
+        "js/sanitize-util.js",
+        "vendor/zoho/annotator/annotator.js"
+      ],
+      "css": [
+        "vendor/zoho/annotator/annotator.css"
+      ],
+      "run_at": "document_start"
+    }
+  ],
+  "web_accessible_resources": [
+    "html/*",
+    "images/icn-success-clipping.png",
+    "images/icn-close-popup.png",
+    "images/*",
+    "css/*",
+    "js/*",
+    "fonts/*",
+    "vendor/*"
+  ],
+  "browser_action": {
+    "default_icon": {
+      "19": "images/icon.png",
+      "38": "images/icon@2x.png",
+      "128": "images/icon-128.png"
+    }
+  },
+  "icons": {
+    "16": "images/icon-rightmenu.png",
+    "32": "images/icon-rightmenu@2x.png",
+    "48": "images/icon-128.png",
+    "128": "images/icon-128.png"
+  },
+  "default_locale": "en",
+  "content_security_policy": "script-src 'self'; object-src 'self';",
+  "permissions": [
+    "tabs",
+    "activeTab",
+    "storage",
+    "cookies",
+    "http://*/*",
+    "https://*/*",
+    "contextMenus",
+    "geolocation",
+    "unlimitedStorage",
+    "webRequest",
+    "webNavigation",
+    "webRequestBlocking"
+  ]
+}

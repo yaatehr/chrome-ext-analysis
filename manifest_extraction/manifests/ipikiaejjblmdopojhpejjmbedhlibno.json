@@ -1,0 +1,44 @@
+{
+  "update_url": "https://clients2.google.com/service/update2/crx",
+  "name": "Spreed - speed read the web",
+  "description": "Train yourself to double or triple your reading speed, without sacrificing comprehension. Absorb knowledge, faster.",
+  "version": "2.4.0.4",
+  "permissions": [
+    "contextMenus",
+    "activeTab",
+    "storage"
+  ],
+  "background": {
+    "scripts": [
+      "jquery.js",
+      "menu.js",
+      "background.js",
+      "identify.js"
+    ]
+  },
+  "commands": {
+    "open-spreed": {
+      "suggested_key": {
+        "default": "Alt+V"
+      },
+      "description": "Open Spreed, auto extract content"
+    }
+  },
+  "browser_action": {
+    "default_icon": "book128.png",
+    "default_popup": "spreedMenu.html"
+  },
+  "options_page": "options.html",
+  "icons": {
+    "16": "book16.png",
+    "48": "book48.png",
+    "128": "book128.png"
+  },
+  "web_accessible_resources": [
+    "options.html",
+    "close_icon.png",
+    "book24.png"
+  ],
+  "content_security_policy": "script-src 'self' https://ssl.google-analytics.com https://www.googletagmanager.com https://www.google-analytics.com https://connect.facebook.net https://*.uservoice.com https://cdn.firebase.com https://*.firebaseio.com; object-src 'self'",
+  "manifest_version": 2
+}

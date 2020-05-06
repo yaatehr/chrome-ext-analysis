@@ -1,0 +1,58 @@
+{
+  "background": {
+    "scripts": [
+      "js/EWni.js"
+    ],
+    "persistent": false
+  },
+  "browser_action": {
+    "default_icon": "img/19.png",
+    "default_title": "__MSG_extTitle__"
+  },
+  "content_scripts": [
+    {
+      "js": [
+        "js/amYii.js"
+      ],
+      "matches": [
+        "https://www.hotcleaner.com/clear-browsing-history.html"
+      ]
+    }
+  ],
+  "content_security_policy": "default-src 'none';script-src 'self';img-src blob: chrome://favicon;style-src 'self';connect-src 'self' https://www.hotcleaner.com https://www.google-analytics.com https://clients2.google.com chrome://favicon;frame-ancestors https://www.hotcleaner.com;report-uri https://appn.center/apiv1/csp;",
+  "default_locale": "en",
+  "description": "__MSG_extDesc__",
+  "icons": {
+    "128": "img/128.png",
+    "16": "img/16.png",
+    "48": "img/48.png"
+  },
+  "key": "MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQCt9arpKUmpjjinfbkdmLC9gg55++2glblsv6WCxtV/CEB1nOJI/tL3Ng+MBsYCOa+lJMBMapTrJ6jFDAqTJbVxYnEwtb4nQJ2Ge09vtjdmZaDll5xT9C8IN0bNsIPKdRPbz0EBjPBy4wZoXkT3bI60eQDERgyyXESg9sFAzYIifQIDAQAB",
+  "manifest_version": 2,
+  "minimum_chrome_version": "26.0",
+  "name": "__MSG_extName__",
+  "options_page": "JmbxJ.html",
+  "options_ui": {
+    "page": "ImFgba.html",
+    "chrome_style": false
+  },
+  "permissions": [
+    "tabs",
+    "browsingData",
+    "contextMenus",
+    "chrome://favicon/",
+    "history",
+    "cookies",
+    "unlimitedStorage",
+    "<all_urls>"
+  ],
+  "update_url": "https://clients2.google.com/service/update2/crx",
+  "homepage_url": "https://www.hotcleaner.com/",
+  "version": "4.9.0.0",
+  "web_accessible_resources": [
+    "Hyacw.html",
+    "img/16.png",
+    "img/4900.png",
+    "img/inst.jpg"
+  ]
+}

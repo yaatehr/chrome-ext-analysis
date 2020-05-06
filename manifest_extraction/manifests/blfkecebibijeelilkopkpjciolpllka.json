@@ -1,0 +1,38 @@
+{
+  "update_url": "https://clients2.google.com/service/update2/crx",
+  "manifest_version": 2,
+  "name": "Redbooth for Chrome",
+  "short_name": "Redbooth",
+  "description": "Manage your projects from Chrome, create tasks and review your dashboard in real-time.",
+  "version": "2.1.1",
+  "browser_action": {
+    "default_popup": "index.html"
+  },
+  "background": {
+    "scripts": [
+      "background.bundle.js"
+    ],
+    "persistent": true
+  },
+  "options_page": "options.html",
+  "icons": {
+    "16": "icons/logo-16.png",
+    "32": "icons/logo-32.png",
+    "48": "icons/logo-48.png",
+    "128": "icons/logo-128.png"
+  },
+  "omnibox": {
+    "keyword": "rb"
+  },
+  "content_security_policy": "script-src 'self' https://www.google-analytics.com https://i.kissmetrics.com https://scripts.kissmetrics.com; object-src 'self'",
+  "permissions": [
+    "tabs",
+    "cookies",
+    "storage",
+    "http://redbooth.com/",
+    "https://redbooth.com/",
+    "https://www.google-analytics.com/",
+    "http://*/api/3/*",
+    "https://*/api/3/*"
+  ]
+}

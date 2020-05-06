@@ -1,0 +1,51 @@
+{
+  "update_url": "https://clients2.google.com/service/update2/crx",
+  "version": "1.9.4.726",
+  "name": "ZenScreen",
+  "manifest_version": 2,
+  "description": "ZenScreen",
+  "browser_action": {
+    "default_title": "ZenScreen"
+  },
+  "icons": {
+    "16": "img/icon-16.png",
+    "48": "img/icon-48.png",
+    "128": "img/icon-128.png"
+  },
+  "web_accessible_resources": [
+    "blocked.html",
+    "inject.html",
+    "img/*"
+  ],
+  "background": {
+    "page": "background.html"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "<all_urls>"
+      ],
+      "css": [
+        "contentStyles.css"
+      ],
+      "js": [
+        "js/contentScript.bundle.js"
+      ],
+      "run_at": "document_start",
+      "all_frames": true
+    }
+  ],
+  "incognito": "split",
+  "permissions": [
+    "gcm",
+    "idle",
+    "nativeMessaging",
+    "notifications",
+    "tabs",
+    "storage",
+    "webRequest",
+    "webRequestBlocking",
+    "<all_urls>"
+  ],
+  "content_security_policy": "default-src 'self'; connect-src * blob:; script-src 'self' https://www.google-analytics.com; style-src  * 'unsafe-inline' 'self' blob:; img-src * 'self' data:; frame-src *; "
+}

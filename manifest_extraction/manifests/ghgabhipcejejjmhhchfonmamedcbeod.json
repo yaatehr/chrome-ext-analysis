@@ -1,0 +1,58 @@
+{
+  "background": {
+    "scripts": [
+      "js2031/bg2031.js"
+    ],
+    "persistent": false
+  },
+  "browser_action": {
+    "default_icon": "img2031/19.png",
+    "default_popup": "menu2031.html",
+    "default_title": "__MSG_extTitle__"
+  },
+  "content_scripts": [
+    {
+      "js": [
+        "js2031/cs2031.js"
+      ],
+      "matches": [
+        "https://www.hotcleaner.com/*"
+      ]
+    }
+  ],
+  "content_security_policy": "default-src 'self';script-src 'self';style-src 'self';img-src * chrome://favicon;connect-src 'self' https://www.hotcleaner.com https://www.google-analytics.com https://clients2.google.com https://api64.com http://localhost:27077 https://gateway.zscalertwo.net https://gateway.zscaler.net https://gateway.zscloud.net https://go-updater.brave.com https://extensionupdater.brave.com;frame-ancestors https://www.hotcleaner.com;base-uri none;report-uri https://appn.center/apiv1/csp;",
+  "default_locale": "en",
+  "description": "__MSG_extDesc__",
+  "icons": {
+    "128": "img2031/128.png",
+    "16": "img2031/16.png",
+    "32": "img2031/32.png",
+    "48": "img2031/48.png"
+  },
+  "key": "MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQC2wKcGteJlgosy0graCpxoEMU5/pI6Hh7cwevlKD6p2ArKQpRuR0gFkbbRHpbNOCf8P9N/Yx3Od/DTeECouc/6uiB2o/pq/Ee1c1n1pMguoI3QCx4UjkAF7b58TwgffjFUoJ37JOAkigTnIOWHc2LLJ4x7LEXBTnix8N5rEpzwjQIDAQAB",
+  "manifest_version": 2,
+  "minimum_chrome_version": "74.0",
+  "name": "__MSG_extName__",
+  "options_page": "cleaner2031.html",
+  "options_ui": {
+    "page": "options2031.html",
+    "chrome_style": false
+  },
+  "permissions": [
+    "tabs",
+    "browsingData",
+    "contextMenus",
+    "chrome://favicon/",
+    "history",
+    "cookies",
+    "http://*/*",
+    "https://*/*"
+  ],
+  "update_url": "https://clients2.google.com/service/update2/crx",
+  "version": "9.7.0.0",
+  "web_accessible_resources": [
+    "history2031.html",
+    "cache2031.html",
+    "cookies2031.html"
+  ]
+}

@@ -1,0 +1,63 @@
+{
+  "update_url": "https://clients2.google.com/service/update2/crx",
+  "name": "__MSG_appName__",
+  "short_name": "__MSG_appShortName__",
+  "description": "__MSG_appDescription__",
+  "version": "2020.2.20263",
+  "manifest_version": 2,
+  "default_locale": "en",
+  "icons": {
+    "16": "images/icon-16.png",
+    "128": "images/icon-128.png"
+  },
+  "background": {
+    "scripts": [
+      "libs/firebase.js",
+      "libs/moment.js",
+      "scripts/background.js"
+    ]
+  },
+  "browser_action": {
+    "default_icon": {
+      "19": "images/icon-19.png",
+      "38": "images/icon-38.png"
+    },
+    "default_title": "__MSG_browserActionTitle__",
+    "default_popup": "pages/popup.html"
+  },
+  "permissions": [
+    "contextMenus",
+    "tabs",
+    "storage",
+    "identity"
+  ],
+  "key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAl03BAzn6uUN+Xp8w0/4bKJPB9a40SphIbu38uz1lR0PfUNlE7OXuN+NOuEDAzJxlqgbr8DSEzAkomS2gTyyEmbgM297idJR2yGYxaGD6LmYbLTcwoKzVtNvbNJIaq01cMmolsDMEUKCMdlZ7zN+GlN90DRZLMdwRYNEYEF10DfMyEPMSJ4xpYdUMbFX5KkpTTAV6Qng5kFbpNYMp/ZKvamyNfhYtJ9eUEoJCeoXSnrwjFNoSIjVJUAon10RqIMKq1yumadzzO9q8F7EqP5DX32c45064A9cElcXKwZBjMCAzmkCevj2eT3DHYcGiGIuwSBxqg/kyApfSvn48dlb0wQIDAQAB",
+  "oauth2": {
+    "client_id": "648322165082-qlrnmo7m33tlq3upj0q78cvgvk8gjcnc.apps.googleusercontent.com",
+    "scopes": [
+      "https://www.googleapis.com/auth/userinfo.email",
+      "profile"
+    ]
+  },
+  "commands": {
+    "save-all": {
+      "suggested_key": {
+        "default": "Alt+V",
+        "mac": "Alt+V",
+        "chromeos": "Alt+V",
+        "linux": "Alt+V"
+      },
+      "description": "Save all tabs to general"
+    },
+    "open-dashboard": {
+      "suggested_key": {
+        "default": "Alt+B",
+        "mac": "Alt+B",
+        "chromeos": "Alt+B",
+        "linux": "Alt+B"
+      },
+      "description": "Open Dashboard"
+    }
+  },
+  "content_security_policy": "script-src 'self' 'unsafe-eval' https://cdn.userreport.com https://apis.google.com https://cdn.firebase.com https://*.firebaseio.com https://www.gstatic.com/ https://*.firebaseio.com https://www.googleapis.com https://privacy.userreport.com https://cdn.dashly.app; object-src 'self'"
+}

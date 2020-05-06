@@ -1,0 +1,35 @@
+{
+  "manifest_version": 2,
+  "name": "__MSG_AddHead__",
+  "permissions": [
+    "idle",
+    "notifications",
+    "<all_urls>",
+    "storage",
+    "cookies",
+    "webRequest",
+    "webRequestBlocking",
+    "tabs",
+    "unlimitedStorage"
+  ],
+  "icons": {
+    "128": "128-logo.png"
+  },
+  "default_locale": "en",
+  "description": "Get Accurate Weather, BTS Bangtan Boys 4K Wallpapers, Clock, Time, Date And More With BTS Bangtan Boys New Tab",
+  "update_url": "https://clients2.google.com/service/update2/crx",
+  "version": "3.5.4",
+  "background": {
+    "scripts": [
+      "bg_script.js"
+    ]
+  },
+  "browser_action": {
+    "default_icon": "128-logo.png",
+    "default_title": "BTS Bangtan Boys Themes - New Tab"
+  },
+  "chrome_url_overrides": {
+    "newtab": "index.html"
+  },
+  "content_security_policy": "script-src 'self' 'unsafe-eval'  https://www.google-analytics.com https://ssl.google-analytics.com https://themense.club;  object-src 'self'"
+}

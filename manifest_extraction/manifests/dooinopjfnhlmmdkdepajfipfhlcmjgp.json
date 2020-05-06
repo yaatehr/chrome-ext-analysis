@@ -1,0 +1,59 @@
+{
+  "update_url": "https://clients2.google.com/service/update2/crx",
+  "name": "CrankWheel Screen Sharing",
+  "short_name": "CrankWheel",
+  "description": "__MSG_manifestDescription__",
+  "version": "4.8.0.1",
+  "default_locale": "en",
+  "icons": {
+    "16": "img/cwicon16.png",
+    "19": "img/cwicon19.png",
+    "38": "img/cwicon38.png",
+    "48": "img/cwicon48.png",
+    "128": "img/cwicon128.png"
+  },
+  "options_page": "html/showoptions.html",
+  "background": {
+    "persistent": true,
+    "page": "html/background.html"
+  },
+  "browser_action": {
+    "default_icon": {
+      "19": "img/cwicon19.png",
+      "38": "img/cwicon38.png"
+    },
+    "default_title": "Start sharing things on your screen with your customer"
+  },
+  "permissions": [
+    "<all_urls>",
+    "desktopCapture",
+    "idle",
+    "notifications",
+    "storage",
+    "tabCapture",
+    "tabs"
+  ],
+  "optional_permissions": [
+    "downloads",
+    "nativeMessaging"
+  ],
+  "content_scripts": [
+    {
+      "matches": [
+        "*://*/ss/signup*"
+      ],
+      "run_at": "document_end",
+      "js": [
+        "js/content/install_check.js"
+      ]
+    }
+  ],
+  "commands": {
+    "_execute_browser_action": {
+      "suggested_key": {
+        "default": "Alt+C"
+      }
+    }
+  },
+  "manifest_version": 2
+}
