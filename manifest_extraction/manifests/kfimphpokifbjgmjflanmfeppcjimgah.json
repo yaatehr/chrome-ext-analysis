@@ -1,0 +1,53 @@
+{
+  "update_url": "https://clients2.google.com/service/update2/crx",
+  "author": "Innologica",
+  "background": {
+    "persistent": true,
+    "scripts": [
+      "background.js"
+    ]
+  },
+  "browser_action": {
+    "default_icon": {
+      "19": "icons/icon1.png",
+      "38": "icons/icon1_r.png"
+    },
+    "default_popup": "popup.html"
+  },
+  "content_scripts": [
+    {
+      "exclude_matches": [
+        "*://blog.inoreader.com/*",
+        "*://forum.inoreader.com/*",
+        "*://translate.inoreader.com/*",
+        "*://status.inoreader.com/*",
+        "*://test.inoreader.com/*",
+        "*://support.inoreader.com/*"
+      ],
+      "js": [
+        "page.js"
+      ],
+      "matches": [
+        "*://*.inoreader.com/*"
+      ]
+    }
+  ],
+  "description": "Quickly view your updated feeds, subscribe to your currently opened site and more...",
+  "icons": {
+    "128": "icons/128_x_128_pixels.png",
+    "16": "icons/16_x_16_pixels.png",
+    "48": "icons/48_x_48_pixels.png"
+  },
+  "manifest_version": 2,
+  "name": "Inoreader Companion",
+  "options_page": "options.html",
+  "options_ui": {
+    "page": "options.html"
+  },
+  "permissions": [
+    "tabs",
+    "storage",
+    "*://*.inoreader.com/*"
+  ],
+  "version": "4.1.5"
+}

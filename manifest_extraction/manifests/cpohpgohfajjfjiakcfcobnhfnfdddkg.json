@@ -1,0 +1,48 @@
+{
+  "update_url": "https://clients2.google.com/service/update2/crx",
+  "name": "Later - Save Images for Instagram",
+  "description": "Find and save photos for Instagram from across the web using the Later Chrome Extension.",
+  "homepage_url": "https://later.com",
+  "version": "1.0.2",
+  "manifest_version": 2,
+  "minimum_chrome_version": "22.0.0.0",
+  "browser_action": {
+    "default_icon": {
+      "19": "icon19.png",
+      "38": "icon48.png"
+    },
+    "default_popup": "popup.html"
+  },
+  "background": {
+    "scripts": [
+      "data/main.js"
+    ]
+  },
+  "permissions": [
+    "activeTab",
+    "contextMenus"
+  ],
+  "web_accessible_resources": [
+    "manifest.json"
+  ],
+  "content_scripts": [
+    {
+      "matches": [
+        "<all_urls>"
+      ],
+      "css": [
+        "data/later-chrome.css"
+      ],
+      "js": [
+        "data/libs/jquery-2.2.3.min.js",
+        "data/later-chrome.js",
+        "data/adobe.js"
+      ]
+    }
+  ],
+  "icons": {
+    "16": "icon16.png",
+    "48": "icon48.png",
+    "128": "icon128.png"
+  }
+}

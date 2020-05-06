@@ -1,0 +1,91 @@
+{
+  "update_url": "https://clients2.google.com/service/update2/crx",
+  "name": "Occupy The Bookstore: Compare Textbook Prices",
+  "description": "Compare textbook prices directly on your bookstore website. Search 25+ stores at once.",
+  "version": "3.2.4",
+  "content_security_policy": "script-src 'self' https://www.google-analytics.com; object-src 'self'",
+  "manifest_version": 2,
+  "background": {
+    "scripts": [
+      "background.js"
+    ],
+    "persistant": false
+  },
+  "permissions": [
+    "storage",
+    "<all_urls>"
+  ],
+  "content_scripts": [
+    {
+      "matches": [
+        "http://www.example.com/",
+        "http://*.bncollege.com/webapp/wcs/stores/servlet/*TBListView*",
+        "http://*.bncollege.com/webapp/wcs/stores/servlet/*TextbookDetailView?*",
+        "http://*.bncollege.com/webapp/wcs/stores/servlet/*TBWizardView*",
+        "http://*.bncollege.com/webapp/wcs/stores/servlet/*BNCBHomePage*",
+        "http://*.bncollege.com/webapp/wcs/stores/servlet/BNCBSellBackTextbookView*",
+        "http://*.bncollege.com/webapp/wcs/stores/servlet/BNCB_DigitalBooks*",
+        "http://*.bncollege.com/webapp/wcs/stores/servlet/ProductSearchCommand*",
+        "http://www.bkstr.com/webapp/wcs/stores/servlet/CourseMaterialsResultsView*",
+        "http://www.bkstr.com/ProductDisplay*",
+        "http://*.bncollege.com/webapp/wcs/stores/servlet/BNCBRentalView*",
+        "http://www.bkstr.com/*/home*",
+        "http://www.bkstr.com/*/textbooks-and-course-materials",
+        "http://www.bkstr.com/*/shop/books/health-science-partner-site",
+        "http://www.bkstr.com/*/shop/books/general-books-print",
+        "http://www.bkstr.com/*/shop/books/HelpRentalView*",
+        "http://www.bkstr.com/webapp/wcs/stores/servlet/AboutBuybackView*",
+        "http://www.bkstr.com/webapp/wcs/stores/servlet/NavigationSearch*",
+        "http://www.bkstr.com/webapp/wcs/stores/servlet/OnlineRegistration*",
+        "http://www.bkstr.com/webapp/wcs/stores/servlet/LocateCourseMaterialsView*",
+        "http://www.brytewave.com/*/home*",
+        "http://www.brytewave.com/*/textbooks-and-course-materials",
+        "http://www.brytewave.com/ProductDisplay*",
+        "http://www.brytewave.com/*/shop/books/health-science-partner-site",
+        "http://www.brytewave.com/*/shop/books/general-books-print",
+        "http://www.brytewave.com/webapp/wcs/stores/servlet/AboutBuybackView*",
+        "http://www.brytewave.com/webapp/wcs/stores/servlet/NavigationSearch*",
+        "http://www.brytewave.com/webapp/wcs/stores/servlet/CourseMaterialsResultsView*",
+        "http://www.brytewave.com/*/HelpRentalView*",
+        "http://*.verbacompare.com/",
+        "https://*.verbacompare.com/",
+        "http://*.verbacompare.com/comparison*",
+        "https://*.verbacompare.com/comparison*",
+        "http://*.verbasoftware.com/",
+        "http://*.verbasoftware.com/comparison*",
+        "http://*/ePOS*",
+        "https://securex.bncollege.com/webapp/wcs/stores/servlet/*BNCBHomePage*",
+        "https://securex.bncollege.com/webapp/wcs/stores/servlet/*TBListView*",
+        "http://securex.bncollege.com/webapp/wcs/stores/servlet/*TBWizardView*",
+        "http://securex.bncollege.com/webapp/wcs/stores/servlet/BNCBRentalView*",
+        "http://securex.bncollege.com/webapp/wcs/stores/servlet/BNCBSellBackTextbookView*",
+        "http://securex.bncollege.com/webapp/wcs/stores/servlet/BNCB_DigitalBooks*",
+        "http://securex.bncollege.com/webapp/wcs/stores/servlet/ProductSearchCommand*",
+        "http://bookstore.mbsdirect.net/*",
+        "http://*/vb_buy2.php?ACTION=chooseAdoptions*",
+        "http://*/vbn/vb_buy2.php?ACTION=chooseAdoptions*",
+        "http://*/vbn/vb_buy2.php*",
+        "https://www.uvicbookstore.ca/",
+        "https://www.uvicbookstore.ca/text/*",
+        "http://*/CourseMaterials.aspx",
+        "http://*/CourseMaterials.aspx",
+        "http://*/*/CourseMaterials.aspx",
+        "http://*/SelectTermDept.aspx",
+        "http://*/*/home.aspx",
+        "http://*/*/SelectTermDept.aspx",
+        "http://*/selecttermdept.aspx*",
+        "http://*/*/selecttermdept.aspx*",
+        "http://*/TextBookDetail.aspx*",
+        "http://*/*/TextBookDetail.aspx*",
+        "http://*/SiteText.aspx*",
+        "http://*/*/SiteText.aspx*",
+        "http://coursematerials.uicbookstore.org/",
+        "http://coursematerials.uicbookstore.org/?2",
+        "http://coursematerials.uicbookstore.org/comparison*"
+      ],
+      "js": [
+        "content.js"
+      ]
+    }
+  ]
+}

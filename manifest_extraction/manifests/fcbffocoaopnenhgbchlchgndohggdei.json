@@ -1,0 +1,37 @@
+{
+  "update_url": "https://clients2.google.com/service/update2/crx",
+  "name": "MeasureMate",
+  "description": "The ultimate tool for measuring distances between elements on websites",
+  "icons": {
+    "128": "icon/icon128.png",
+    "48": "icon/icon48.png",
+    "32": "icon/icon32.png",
+    "16": "icon/icon16.png"
+  },
+  "version": "1.0.2",
+  "permissions": [
+    "activeTab"
+  ],
+  "background": {
+    "scripts": [
+      "background.js"
+    ],
+    "persistent": false
+  },
+  "browser_action": {
+    "browser_action": {
+      "default_title": "MeasureMate",
+      "default_icon": "icon/icon16.png"
+    }
+  },
+  "commands": {
+    "toggle-measure-mate": {
+      "suggested_key": {
+        "default": "Alt+Shift+Z",
+        "mac": "Alt+Shift+Z"
+      },
+      "description": "Toggles MeasureMate"
+    }
+  },
+  "manifest_version": 2
+}

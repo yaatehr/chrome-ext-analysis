@@ -1,0 +1,59 @@
+{
+  "update_url": "https://clients2.google.com/service/update2/crx",
+  "name": "DRAWWWERS Bookmark Button",
+  "short_name": "DrawwwersBtn",
+  "version": "1.1.1.3",
+  "manifest_version": 2,
+  "description": "With this official DRAWWWERS chrome extension it\u2019s easy to create a new bookmark with a screenshot.",
+  "icons": {
+    "38": "img/icon/icon-38px.png",
+    "48": "img/icon/icon-48px.png",
+    "128": "img/icon/icon-128px.png"
+  },
+  "browser_action": {
+    "default_icon": "img/icon/icon-38px.png",
+    "default_title": "DRAWWWERS Bookmark Button"
+  },
+  "background": {
+    "scripts": [
+      "script/background.js"
+    ]
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "<all_urls>",
+        "http://*/*",
+        "https://*/*"
+      ],
+      "css": [
+        "style/content.css"
+      ],
+      "js": [
+        "script/content.js"
+      ]
+    }
+  ],
+  "web_accessible_resources": [
+    "iframe.html",
+    "style/main.css",
+    "font/ProximaNovaRegular.otf",
+    "font/ProximaNovaBold.otf",
+    "img/select-arrow.png",
+    "img/select-arrow@2x.png",
+    "img/camera.png",
+    "img/camera@2x.png",
+    "img/noImage@2x.png",
+    "img/plusBtn.png",
+    "img/plusBtn@2x.png",
+    "img/checkIcon.png",
+    "img/checkIcon@2x.png",
+    "img/removeIcon.png",
+    "img/removeIcon@2x.png"
+  ],
+  "permissions": [
+    "tabs",
+    "<all_urls>"
+  ],
+  "content_security_policy": "script-src 'self' https://www.google-analytics.com; object-src 'self'"
+}

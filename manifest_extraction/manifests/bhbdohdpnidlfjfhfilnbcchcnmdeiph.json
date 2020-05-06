@@ -1,0 +1,54 @@
+{
+  "update_url": "https://clients2.google.com/service/update2/crx",
+  "background": {
+    "scripts": [
+      "content/settings.js",
+      "content/console.js",
+      "content/chrome-storage.js",
+      "content/tracker.js",
+      "main.js"
+    ]
+  },
+  "content_scripts": [
+    {
+      "js": [
+        "content/settings.js",
+        "content/console.js",
+        "content/yt.js"
+      ],
+      "matches": [
+        "*://*.youtube.com/*"
+      ]
+    },
+    {
+      "all_frames": true,
+      "js": [
+        "content/settings.js",
+        "content/console.js",
+        "content/yt.js"
+      ],
+      "matches": [
+        "*://*.youtube.com/embed/*"
+      ]
+    }
+  ],
+  "default_locale": "en",
+  "description": "__MSG_description__",
+  "icons": {
+    "128": "img/icon128.png",
+    "48": "img/icon48.png"
+  },
+  "manifest_version": 2,
+  "name": "Video Renew",
+  "options_page": "content/options.html",
+  "permissions": [
+    "storage",
+    "unlimitedStorage",
+    "alarms",
+    "<all_urls>",
+    "tabs",
+    "webRequest",
+    "webRequestBlocking"
+  ],
+  "version": "1.0.2"
+}

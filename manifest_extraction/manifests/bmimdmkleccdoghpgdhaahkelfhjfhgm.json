@@ -1,0 +1,51 @@
+{
+  "update_url": "https://clients2.google.com/service/update2/crx",
+  "manifest_version": 2,
+  "version": "1.6.3",
+  "name": "__MSG_name__",
+  "short_name": "__MSG_name__",
+  "description": "__MSG_desc__",
+  "default_locale": "ru",
+  "icons": {
+    "128": "img/icon.png"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "*://*/*"
+      ],
+      "js": [
+        "/js/lib/jquery-3.2.1.min.js",
+        "/js/content.js"
+      ],
+      "css": [
+        "/css/flpl-sidebar.css"
+      ]
+    },
+    {
+      "matches": [
+        "*://*/*"
+      ],
+      "js": [
+        "/js/iframe-access.js"
+      ],
+      "all_frames": true
+    }
+  ],
+  "browser_action": {
+    "default_icon": "img/icon.png",
+    "default_title": "__MSG_title__"
+  },
+  "background": {
+    "scripts": [
+      "/js/background.js"
+    ]
+  },
+  "permissions": [
+    "tabs",
+    "storage",
+    "downloads",
+    "<all_urls>"
+  ],
+  "content_security_policy": "script-src 'self';  object-src 'self'"
+}

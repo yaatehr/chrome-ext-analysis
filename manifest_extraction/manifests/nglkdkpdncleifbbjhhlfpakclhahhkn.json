@@ -1,0 +1,26 @@
+{
+  "background": {
+    "scripts": [
+      "iwebchk.js"
+    ]
+  },
+  "browser_action": {
+    "default_icon": "iwebchk_16x16.png",
+    "default_title": "iwebchk"
+  },
+  "permissions": [
+    "tabs"
+  ],
+  "description": "Website SEO anaylysis and audit tool.",
+  "homepage_url": "https://iwebchk.com",
+  "icons": {
+    "128": "iwebchk_128x128.png",
+    "16": "iwebchk_16x16.png",
+    "32": "iwebchk_32x32.png",
+    "64": "iwebchk_64x64.png"
+  },
+  "manifest_version": 2,
+  "name": "SEO audit by iwebchk",
+  "update_url": "https://clients2.google.com/service/update2/crx",
+  "version": "1.4.2"
+}

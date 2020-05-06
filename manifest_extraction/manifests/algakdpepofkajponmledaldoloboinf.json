@@ -1,0 +1,51 @@
+{
+  "update_url": "https://clients2.google.com/service/update2/crx",
+  "name": "__MSG_name__",
+  "description": "__MSG_description__",
+  "default_locale": "en",
+  "version": "3.3.0",
+  "options_page": "options.html",
+  "icons": {
+    "16": "/assets/img/icon-16.png",
+    "48": "/assets/img/icon-48.png",
+    "128": "/assets/img/icon-128.png"
+  },
+  "background": {
+    "page": "background.html"
+  },
+  "browser_action": {
+    "default_icon": {
+      "19": "/assets/img/browser-action-icon-19.png",
+      "38": "/assets/img/browser-action-icon-76.png"
+    },
+    "default_popup": "index.html",
+    "default_title": "__MSG_name__",
+    "popup_size": {
+      "width": 400,
+      "height": 500
+    }
+  },
+  "optional_permissions": [
+    "<all_urls>"
+  ],
+  "permissions": [
+    "*://*.pomotodo.com/*",
+    "tabs",
+    "alarms",
+    "notifications",
+    "storage",
+    "background"
+  ],
+  "web_accessible_resources": [
+    "/assets/img/icon-128.png",
+    "/assets/img/keepcalm.png"
+  ],
+  "externally_connectable": {
+    "matches": [
+      "https://*.pomotodo.com/*",
+      "*://localhost/*"
+    ]
+  },
+  "content_security_policy": "script-src 'self' 'unsafe-eval' 'sha256-GJdOr88mTtNDqgf7S4BZ1xfKcKayVm6AEHDXyzHi6ac=' 'sha256-ImBXfZRnh0R/pgDOf5wYwRzvtRqH5A4dKqvyls8y/bA=' 'sha256-47DEQpj8HBSa+/TImW+5JCeuQeRkm5NMpJWZG3hSuFU=' 'sha256-47DEQpj8HBSa+/TImW+5JCeuQeRkm5NMpJWZG3hSuFU=' 'sha256-RXjNT/gPCpGFXr14UGkCFdWMOSpf14Fp7fwy5saLUeA='; object-src 'self'",
+  "manifest_version": 2
+}

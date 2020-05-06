@@ -1,0 +1,51 @@
+{
+  "update_url": "https://clients2.google.com/service/update2/crx",
+  "content_security_policy": "script-src 'self' 'unsafe-eval'; object-src 'self'",
+  "description": "Why should only mobile browsers have tab managers",
+  "manifest_version": 2,
+  "minimum_chrome_version": "22",
+  "name": "Fruumo Tab Manager",
+  "offline_enabled": true,
+  "browser_action": {
+    "default_icon": {
+      "19": "images/smalllogo.png",
+      "38": "images/38.png"
+    },
+    "default_title": "Fruumo Tab Manager",
+    "default_popup": "beauty.html"
+  },
+  "optional_permissions": [
+    "*://*/*"
+  ],
+  "permissions": [
+    "tabs",
+    "storage",
+    "history",
+    "unlimitedStorage",
+    "bookmarks",
+    "chrome://favicon/",
+    "*://*/*"
+  ],
+  "version": "1.23",
+  "background": {
+    "scripts": [
+      "background.js"
+    ]
+  },
+  "icons": {
+    "128": "/images/128.png"
+  },
+  "web_accessible_resources": [
+    "beauty.html"
+  ],
+  "commands": {
+    "_execute_browser_action": {
+      "suggested_key": {
+        "windows": "Alt+Z",
+        "mac": "Alt+Z",
+        "chromeos": "Alt+Z",
+        "linux": "Alt+Z"
+      }
+    }
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "update_url": "https://clients2.google.com/service/update2/crx",
+  "name": "Alexa Traffic Rank",
+  "version": "4.0.4",
+  "description": "The Official Alexa Traffic Rank Extension, providing Alexa Traffic Rank and site Information when clicked.",
+  "manifest_version": 2,
+  "icons": {
+    "48": "images/icon-48x48.png",
+    "128": "images/icon-128x128.png"
+  },
+  "homepage_url": "http://www.alexa.com",
+  "browser_action": {
+    "default_icon": "images/icon-19x19.png",
+    "default_title": "No Rank Data",
+    "popup": "html/popup.html"
+  },
+  "minimum_chrome_version": "23",
+  "content_security_policy": "script-src 'self' https://s3.amazonaws.com https://www.alexa.com; object-src 'self'",
+  "web_accessible_resources": [
+    "html/content/toolbar.html",
+    "html/content/javascript_button.html",
+    "html/content/menu.html",
+    "html/content/menupopup.html"
+  ],
+  "permissions": [
+    "webRequestBlocking",
+    "webRequest",
+    "webNavigation",
+    "tabs",
+    "management",
+    "http://*/*",
+    "https://*/*"
+  ],
+  "background": {
+    "page": "html/background.html"
+  }
+}

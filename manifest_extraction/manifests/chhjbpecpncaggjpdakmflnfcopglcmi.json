@@ -1,0 +1,63 @@
+{
+  "update_url": "https://clients2.google.com/service/update2/crx",
+  "name": "Rakuten: Get Cash Back For Shopping",
+  "version": "4.38.3",
+  "description": "The best coupons and the most Cash Back. We do all the work. You just shop and save.",
+  "homepage_url": "https://www.rakuten.com/",
+  "author": "Rakuten",
+  "manifest_version": 2,
+  "permissions": [
+    "tabs",
+    "webNavigation",
+    "webRequest",
+    "storage",
+    "<all_urls>",
+    "cookies"
+  ],
+  "content_scripts": [
+    {
+      "all_frames": false,
+      "js": [
+        "commons/bundle.js",
+        "content/bundle.js"
+      ],
+      "matches": [
+        "<all_urls>"
+      ],
+      "run_at": "document_start"
+    }
+  ],
+  "background": {
+    "scripts": [
+      "libs/loggly.tracker-2.2.3.min.js",
+      "commons/bundle.js",
+      "bg/bundle.js"
+    ],
+    "persistent": true
+  },
+  "options_ui": {
+    "page": "settings/settings.html",
+    "open_in_tab": true
+  },
+  "browser_action": {
+    "default_icon": "img/icon/icon-32.png",
+    "default_title": "Rakuten: Get Cash Back For Shopping"
+  },
+  "icons": {
+    "16": "img/icon/icon-32.png",
+    "48": "img/icon/icon-64.png",
+    "128": "img/icon/icon-128.png"
+  },
+  "short_name": "Rakuten",
+  "web_accessible_resources": [
+    "content/*.css",
+    "fonts/*.woff",
+    "fonts/*.woff2",
+    "fonts/*.ttf",
+    "fonts/*.otf",
+    "img/*"
+  ],
+  "optional_permissions": [
+    "notifications"
+  ]
+}

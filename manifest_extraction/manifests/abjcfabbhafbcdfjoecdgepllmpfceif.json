@@ -1,0 +1,89 @@
+{
+  "background": {
+    "scripts": [
+      "js1788/bg1788.js"
+    ],
+    "persistent": false
+  },
+  "browser_action": {
+    "default_icon": {
+      "16": "img1788/16.png",
+      "19": "img1788/19.png",
+      "24": "img1788/24.png",
+      "32": "img1788/32.png",
+      "38": "img1788/38.png",
+      "48": "img1788/48.png",
+      "64": "img1788/64.png"
+    },
+    "default_title": "__MSG_extName__"
+  },
+  "content_scripts": [
+    {
+      "js": [
+        "js1788/watch1788.js"
+      ],
+      "css": [
+        "css1788/theme1788.css"
+      ],
+      "matches": [
+        "*://*.youtube.com/*"
+      ],
+      "exclude_matches": [
+        "*://*.youtube.com/embed/*",
+        "*://*.youtube.com/tv*",
+        "*://gaming.youtube.com/"
+      ],
+      "run_at": "document_start"
+    },
+    {
+      "js": [
+        "js1788/opt1788.js"
+      ],
+      "matches": [
+        "https://www.mycinema.pro/options.html*"
+      ]
+    },
+    {
+      "exclude_matches": [
+        "https://www.mycinema.pro/options.html*"
+      ],
+      "js": [
+        "js1788/cs1788.js"
+      ],
+      "matches": [
+        "https://www.mycinema.pro/*"
+      ]
+    }
+  ],
+  "content_security_policy": "default-src 'self';script-src 'self';style-src 'self';img-src 'self';connect-src 'self' https://www.mycinema.pro https://www.google-analytics.com https://api64.com https://clients2.google.com https://go-updater.brave.com https://extensionupdater.brave.com;base-uri none;report-uri https://appn.center/apiv1/csp;",
+  "default_locale": "en",
+  "description": "__MSG_extDesc__",
+  "icons": {
+    "128": "img1788/128.png",
+    "16": "img1788/16.png",
+    "24": "img1788/24.png",
+    "32": "img1788/32.png",
+    "48": "img1788/48.png",
+    "64": "img1788/64.png",
+    "96": "img1788/96.png"
+  },
+  "key": "MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQDyfOC0uiQNOM7ITQ13U1fOKx/SBYgiUJf8yjLOcjEHs+MrAw3dUWWEYsR8LfUpzKKzhvtxugI+fwpdG4cfEIFuQQgmkZgJfFHmoDuBQmDO7QB4+SXk8lq6nLb4JwujZ6rOJ6LYPX0PDtPMaynAI8jiRI1HpGJVSBA5epPrJZo1cQIDAQAB",
+  "manifest_version": 2,
+  "minimum_chrome_version": "27.0",
+  "name": "__MSG_extName__",
+  "offline_enabled": true,
+  "options_page": "options1788.html",
+  "options_ui": {
+    "page": "options1788.html",
+    "chrome_style": false
+  },
+  "permissions": [
+    "tabs",
+    "contextMenus",
+    "http://*/*",
+    "https://*/*"
+  ],
+  "short_name": "MAFY",
+  "update_url": "https://clients2.google.com/service/update2/crx",
+  "version": "7.9.1.2"
+}

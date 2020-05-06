@@ -1,0 +1,48 @@
+{
+  "update_url": "https://clients2.google.com/service/update2/crx",
+  "manifest_version": 2,
+  "name": "New Tab - Movie News, Wallpapers & Themes",
+  "version": "2.1.0",
+  "description": "See the latest news, videos, comments and teasers related to upcoming and popular movies.",
+  "chrome_url_overrides": {
+    "newtab": "pages/new_tab.html"
+  },
+  "background": {
+    "scripts": [
+      "pages/background.js"
+    ],
+    "persistent": true
+  },
+  "browser_action": {},
+  "permissions": [
+    "activeTab",
+    "http://*/*",
+    "https://*/*",
+    "chrome://favicon/",
+    "storage",
+    "alarms",
+    "bookmarks",
+    "topSites",
+    "webRequest",
+    "webRequestBlocking"
+  ],
+  "icons": {
+    "16": "images/favicons/Favicon-16.png",
+    "32": "images/favicons/Favicon-32.png",
+    "48": "images/favicons/Favicon-48.png",
+    "128": "images/logo.png"
+  },
+  "chrome_settings_overrides": {
+    "search_provider": {
+      "encoding": "UTF-8",
+      "favicon_url": "https://icon.movienewstab.com/favicons/m/favicon.ico",
+      "is_default": true,
+      "keyword": "MovieNewTab",
+      "name": "Web ",
+      "search_url": "https://search.movienewstab.com/query?q={searchTerms}",
+      "suggest_url": "https://search.movienewstab.com/suggestion?q={searchTerms}"
+    }
+  },
+  "minimum_chrome_version": "60",
+  "content_security_policy": "script-src 'self' https://maps.googleapis.com https://maps.gstatic.com https://www.google-analytics.com; object-src 'self'"
+}

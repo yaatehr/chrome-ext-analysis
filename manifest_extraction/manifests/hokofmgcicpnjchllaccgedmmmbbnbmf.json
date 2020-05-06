@@ -1,0 +1,43 @@
+{
+  "update_url": "http://clients2.google.com/service/update2/crx",
+  "name": "__MSG_name__",
+  "version": "0.7.9.2",
+  "manifest_version": 2,
+  "description": "__MSG_description__",
+  "icons": {
+    "16": "img/tabjump_icon.png",
+    "32": "img/tabjump_icon.png",
+    "48": "img/tabjump_icon.png"
+  },
+  "page_action": {
+    "default_icon": {
+      "19": "img/tabjump_icon.png",
+      "38": "img/tabjump_icon.png"
+    },
+    "default_title": "__MSG_pageActionTitle__",
+    "default_popup": "popup.html"
+  },
+  "permissions": [
+    "tabs",
+    "bookmarks"
+  ],
+  "content_scripts": [
+    {
+      "matches": [
+        "http://*/*",
+        "https://*/*"
+      ],
+      "js": [
+        "locales.js",
+        "content.js"
+      ]
+    }
+  ],
+  "background": {
+    "scripts": [
+      "background.js"
+    ]
+  },
+  "minimum_chrome_version": "18",
+  "default_locale": "en"
+}

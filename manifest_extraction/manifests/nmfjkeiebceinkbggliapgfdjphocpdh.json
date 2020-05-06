@@ -1,0 +1,26 @@
+{
+  "update_url": "https://clients2.google.com/service/update2/crx",
+  "name": "New Tab Draft",
+  "short_name": "Draft",
+  "version": "0.1.5",
+  "manifest_version": 2,
+  "description": "A whole new way to use your Chrome Tab. Open a new tab to take notes, inspirations and make calculations",
+  "icons": {
+    "18": "img/icon/icon18.png",
+    "48": "img/icon/icon48.png",
+    "128": "img/icon/icon128.png"
+  },
+  "background": {
+    "scripts": [
+      "js/bundle.js"
+    ]
+  },
+  "chrome_url_overrides": {
+    "newtab": "index.html"
+  },
+  "permissions": [
+    "fontSettings",
+    "storage"
+  ],
+  "content_security_policy": "script-src 'self' 'unsafe-eval' https://www.google-analytics.com; object-src 'self'"
+}

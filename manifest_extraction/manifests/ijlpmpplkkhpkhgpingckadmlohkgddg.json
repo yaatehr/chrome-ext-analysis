@@ -1,0 +1,69 @@
+{
+  "update_url": "https://clients2.google.com/service/update2/crx",
+  "name": "OnceHub for Gmail",
+  "version": "9.8.2",
+  "description": "Create your ScheduleOnce meeting invitations without leaving Gmail",
+  "icons": {
+    "16": "assets/images/icon16.png",
+    "32": "assets/images/icon32.png",
+    "48": "assets/images/icon48.png",
+    "128": "assets/images/icon128.png"
+  },
+  "manifest_version": 2,
+  "permissions": [
+    "activeTab",
+    "cookies",
+    "declarativeContent",
+    "storage",
+    "tabs",
+    "management",
+    "http://*/*",
+    "https://*/*"
+  ],
+  "background": {
+    "scripts": [
+      "background.js",
+      "runtime.js"
+    ],
+    "persistent": false
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://mail.google.com/*"
+      ],
+      "js": [
+        "inboxsdk.js",
+        "inbox.js",
+        "iframe.js",
+        "contentscript.js",
+        "runtime.js"
+      ],
+      "run_at": "document_end",
+      "all_frames": false
+    },
+    {
+      "matches": [
+        "<all_urls>"
+      ],
+      "js": [
+        "iframe.js",
+        "contentscript.js",
+        "runtime.js"
+      ],
+      "run_at": "document_end",
+      "all_frames": false
+    }
+  ],
+  "browser_action": {
+    "default_icon": {
+      "32": "assets/images/icon32.png",
+      "48": "assets/images/icon48.png"
+    },
+    "default_title": "OnceHub for Gmail"
+  },
+  "web_accessible_resources": [
+    "index.html",
+    "assets/images/ext-icon-gmail.svg"
+  ]
+}

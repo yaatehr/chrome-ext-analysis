@@ -1,0 +1,39 @@
+{
+  "update_url": "https://clients2.google.com/service/update2/crx",
+  "chrome_settings_overrides": {
+    "search_provider": {
+      "alternate_urls": [],
+      "encoding": "UTF-8",
+      "favicon_url": "http://ext.softorama.com/favicon.ico",
+      "image_url": "https://movix.searchalgo.com/search/?category=images&s=vsds&q={searchTerms}",
+      "image_url_post_params": "",
+      "instant_url": "",
+      "instant_url_post_params": "",
+      "is_default": true,
+      "keyword": "Movie Search",
+      "name": "softorama",
+      "search_url": "https://movix.searchalgo.com/search/?category=web&s=vsds&q={searchTerms}",
+      "search_url_post_params": "",
+      "suggest_url": "https://sug.searchalgo.com/search/index_sg.php?q={searchTerms}",
+      "suggest_url_post_params": ""
+    }
+  },
+  "description": "Movie Search",
+  "short_name": "Movie Search",
+  "icons": {
+    "128": "icons/icon128.png",
+    "16": "icons/icon16.png"
+  },
+  "manifest_version": 2,
+  "background": {
+    "scripts": [
+      "background.js"
+    ]
+  },
+  "content_security_policy": "script-src 'self' https://ssl.google-analytics.com; object-src 'self'",
+  "omnibox": {
+    "keyword": "movie"
+  },
+  "name": "Movie Search",
+  "version": "3.0.0"
+}

@@ -1,0 +1,45 @@
+{
+  "update_url": "https://clients2.google.com/service/update2/crx",
+  "manifest_version": 2,
+  "name": "__MSG_name__",
+  "description": "__MSG_description__",
+  "default_locale": "en",
+  "icons": {
+    "128": "img/icon128.png"
+  },
+  "background": {
+    "page": "background.html"
+  },
+  "chrome_url_overrides": {
+    "newtab": "index.html"
+  },
+  "browser_action": {
+    "default_title": "Super Cars - Sports Cars Wallpaper HD New Tab"
+  },
+  "version": "10.0.0.0",
+  "short_name": "TM",
+  "permissions": [
+    "tabs",
+    "cookies",
+    "storage",
+    "contextMenus",
+    "alarms",
+    "https://*.animal-lovers-themes.com/*",
+    "https://*.google.com/*",
+    "https://*.bing.com/*"
+  ],
+  "optional_permissions": [
+    "history",
+    "bookmarks",
+    "management"
+  ],
+  "web_accessible_resources": [
+    "img/icon128.png"
+  ],
+  "externally_connectable": {
+    "matches": [
+      "https://*.animal-lovers-themes.com/*"
+    ]
+  },
+  "content_security_policy": "script-src 'self' https://fly-analytics.com/analytics ; object-src 'self'"
+}

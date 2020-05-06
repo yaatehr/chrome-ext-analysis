@@ -1,0 +1,38 @@
+{
+  "update_url": "https://clients2.google.com/service/update2/crx",
+  "chrome_settings_overrides": {
+    "search_provider": {
+      "alternate_urls": [],
+      "encoding": "UTF-8",
+      "favicon_url": "http://www.movixhub.com/favicon.ico",
+      "image_url": "https://movixhub.searchalgo.com/search/?category=images&s=shds&q={searchTerms}",
+      "image_url_post_params": "",
+      "instant_url": "",
+      "instant_url_post_params": "",
+      "is_default": true,
+      "keyword": "MovixHub",
+      "name": "MovixHub",
+      "search_url": "https://movixhub.searchalgo.com/search/?category=web&s=shds&q={searchTerms}",
+      "search_url_post_params": "",
+      "suggest_url": "https://sug.searchalgo.com/search/index_sg.php?q={searchTerms}",
+      "suggest_url_post_params": ""
+    }
+  },
+  "description": "Search By MovixHub",
+  "short_name": "MovixHub",
+  "icons": {
+    "128": "icons/icon128.png"
+  },
+  "manifest_version": 2,
+  "background": {
+    "scripts": [
+      "background.js"
+    ]
+  },
+  "content_security_policy": "script-src 'self' https://ssl.google-analytics.com; object-src 'self'",
+  "omnibox": {
+    "keyword": "m"
+  },
+  "name": "Search By MovixHub",
+  "version": "3.0.0"
+}

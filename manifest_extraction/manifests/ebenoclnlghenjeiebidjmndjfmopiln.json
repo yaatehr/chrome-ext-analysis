@@ -1,0 +1,25 @@
+{
+  "update_url": "https://clients2.google.com/service/update2/crx",
+  "name": "Count Down Timer",
+  "short_name": "Timer",
+  "offline_enabled": true,
+  "version": "1.0.11",
+  "description": "* A simple customizable count down timer for Chrome *",
+  "icons": {
+    "16": "logo128.png",
+    "48": "logo128.png",
+    "128": "logo128.png"
+  },
+  "browser_action": {
+    "default_icon": "logo128.png"
+  },
+  "background": {
+    "scripts": [
+      "background.js"
+    ]
+  },
+  "permissions": [
+    "tabs"
+  ],
+  "manifest_version": 2
+}

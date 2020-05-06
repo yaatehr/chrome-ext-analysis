@@ -1,0 +1,50 @@
+{
+  "background": {
+    "scripts": [
+      "js/jquery.js",
+      "js/store.js",
+      "js/hash.js",
+      "js/background.js"
+    ]
+  },
+  "browser_action": {
+    "default_icon": "./img/icons/extension/38x38.png",
+    "default_popup": "popup.html",
+    "default_title": "Joxi"
+  },
+  "content_security_policy": "script-src 'self' 'unsafe-eval'; object-src 'self'",
+  "default_locale": "en",
+  "description": "__MSG_description__",
+  "homepage_url": "http://joxi.ru",
+  "icons": {
+    "128": "./img/icons/extension/joxi_128x128.png",
+    "16": "./img/icons/extension/joxi_16x16_darkborder.png",
+    "32": "./img/icons/extension/joxi_32x32.png",
+    "48": "./img/icons/extension/joxi_48x48.png"
+  },
+  "key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAh58nRDfDwu6gu6X03BXNUpsCOKNj7ilrwMpwraTuauFPCJ8Eo8hvoIS6L8cZyIfu+jrtOY64WbScvUMZ8nHyIcLQtessMRumWygN3yelLsNJPPjDajrsqktmt85NahRXr1i7AYYPejDtYOKbXt3utc58lnHUssKO15ZzPrkFDMUzMCZ+UGKxISYjle9SXN6PNULlNRqU3ALki4iVi0UEahgQ8VHGtQKzGz7H7vcauirk49XVRSkzhlsj2r58MLWSWx3QVG+3j9UA3T5d6GHxpgPqzErjYObt2hfCw4J3jBhdxdQCNc6JaBkOkF8R5zrgOwlIrrz9clUVzUHVWGlQmwIDAQAB",
+  "manifest_version": 2,
+  "minimum_chrome_version": "31",
+  "name": "__MSG_name__",
+  "oauth2": {
+    "client_id": "65735377563-uqpm35b7ef52ngmhbad721nomg1pflm6.apps.googleusercontent.com",
+    "scopes": [
+      "joxi"
+    ]
+  },
+  "options_page": "popup.html?options=1",
+  "permissions": [
+    "tabs",
+    "<all_urls>",
+    "http://*/*",
+    "https://*/*",
+    "notifications",
+    "identity",
+    "clipboardWrite",
+    "clipboardRead",
+    "contextMenus"
+  ],
+  "short_name": "Joxi",
+  "update_url": "http://clients2.google.com/service/update2/crx",
+  "version": "0.2.12"
+}

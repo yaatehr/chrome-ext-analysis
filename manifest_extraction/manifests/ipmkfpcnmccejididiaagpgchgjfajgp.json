@@ -1,0 +1,122 @@
+{
+  "update_url": "https://clients2.google.com/service/update2/crx",
+  "manifest_version": 2,
+  "default_locale": "en",
+  "name": "__MSG_extName__",
+  "description": "__MSG_extDescription__",
+  "version": "1.7.3.567",
+  "content_scripts": [
+    {
+      "matches": [
+        "<all_urls>"
+      ],
+      "css": [
+        "css/content_popup.css"
+      ]
+    },
+    {
+      "matches": [
+        "*://*.avira.com/*",
+        "*://*.avira.net/*",
+        "*://*.avira.org/*"
+      ],
+      "js": [
+        "js/content/installed.js"
+      ],
+      "css": [
+        "css/installed.css"
+      ]
+    },
+    {
+      "matches": [
+        "*://*/*"
+      ],
+      "js": [
+        "js/serp/serp.js"
+      ]
+    },
+    {
+      "matches": [
+        "https://*.search.yahoo.com/yhs/search*?*hspart=avira*"
+      ],
+      "all_frames": true,
+      "js": [
+        "js/iframe/app.js",
+        "js/iframe/YahooIFrameEventsInjector.js"
+      ],
+      "css": [
+        "css/serp_annotations.css",
+        "css/browser_specific.css"
+      ]
+    },
+    {
+      "matches": [
+        "<all_urls>"
+      ],
+      "match_about_blank": true,
+      "all_frames": true,
+      "js": [
+        "js/content/UnsafeWebsiteBlocker.js"
+      ],
+      "css": []
+    }
+  ],
+  "icons": {
+    "16": "img/avira_search_icon16.png",
+    "48": "img/avira_search_icon48.png",
+    "128": "img/avira_search_icon128.png"
+  },
+  "browser_action": {
+    "default_title": "__MSG_extName__",
+    "default_icon": {
+      "16": "img/avira_search_icon16.png",
+      "19": "img/avira_search_icon19.png",
+      "24": "img/avira_search_icon24.png",
+      "32": "img/avira_search_icon32.png",
+      "38": "img/avira_search_icon38.png"
+    }
+  },
+  "background": {
+    "scripts": [
+      "js/background.js"
+    ]
+  },
+  "permissions": [
+    "tabs",
+    "storage",
+    "cookies",
+    "http://*/*",
+    "https://*/*",
+    "webRequest",
+    "webRequestBlocking"
+  ],
+  "web_accessible_resources": [
+    "html/newtab_popup.html",
+    "html/search_offer.html",
+    "css/serp_annotations.css",
+    "img/*"
+  ],
+  "commands": {
+    "start-search": {
+      "suggested_key": {
+        "default": "Alt+S"
+      },
+      "description": "Start Avira search"
+    }
+  },
+  "chrome_url_overrides": {
+    "newtab": "html/newtab.html"
+  },
+  "content_security_policy": "script-src 'self'; object-src 'self'",
+  "chrome_settings_overrides": {
+    "search_provider": {
+      "name": "__MSG_extName__",
+      "keyword": "Avira",
+      "search_url": "https://search.avira.com/#web/result?source=omnibar&q={searchTerms}",
+      "suggest_url": "https://search.avira.com/suggestions?q={searchTerms}&li=ff&hl=__MSG_extSuggestionLanguage__",
+      "favicon_url": "https://search.avira.com/favicon.ico",
+      "encoding": "UTF-8",
+      "is_default": true
+    }
+  }
+}

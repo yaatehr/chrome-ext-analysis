@@ -1,0 +1,23 @@
+{
+  "update_url": "https://clients2.google.com/service/update2/crx",
+  "manifest_version": 2,
+  "name": "Figure it Out",
+  "description": "Time zones of your choosing in every new tab screen.",
+  "version": "3.0.0",
+  "default_locale": "en",
+  "permissions": [
+    "geolocation",
+    "https://www.google-analytics.com/",
+    "https://www.googleapis.com/",
+    "https://maps.googleapis.com/"
+  ],
+  "content_security_policy": "default-src 'self' 'unsafe-eval' https://www.google-analytics.com https://maps.googleapis.com https://www.googleapis.com https://js.stripe.com http://api.fioapp.co;",
+  "chrome_url_overrides": {
+    "newtab": "index.html"
+  },
+  "icons": {
+    "16": "img/app-ico-16.png",
+    "48": "img/app-ico-48.png",
+    "128": "img/app-ico-128.png"
+  }
+}

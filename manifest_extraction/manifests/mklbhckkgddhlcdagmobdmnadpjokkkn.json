@@ -1,0 +1,64 @@
+{
+  "update_url": "https://clients2.google.com/service/update2/crx",
+  "manifest_version": 2,
+  "description": "Your team's collective knowledge, everywhere you need it.",
+  "version": "2.102.203",
+  "web_accessible_resources": [
+    "*"
+  ],
+  "icons": {
+    "16": "common/images/icons/logo/g-icon-16.png",
+    "48": "common/images/icons/logo/g-icon-48.png",
+    "128": "common/images/icons/logo/g-icon-128.png"
+  },
+  "browser_action": {
+    "default_icon": {
+      "19": "common/images/icons/logo/guru-chrome19.png",
+      "38": "common/images/icons/logo/guru-chrome38.png"
+    },
+    "default_title": "Guru"
+  },
+  "background": {
+    "scripts": [
+      "vendors-allFrames-allFramesEntry-background-topFrameOnly-topFrameOnlyEntry.js",
+      "vendors-allFrames-background-topFrameOnly.js",
+      "vendors-background-topFrameOnly.js",
+      "background.js"
+    ],
+    "persistent": true
+  },
+  "name": "Guru",
+  "content_scripts": [
+    {
+      "js": [
+        "vendors-allFrames-allFramesEntry-background-topFrameOnly-topFrameOnlyEntry.js",
+        "vendors-allFramesEntry-topFrameOnly-topFrameOnlyEntry.js",
+        "topFrameOnlyEntry.js"
+      ],
+      "matches": [
+        "<all_urls>"
+      ],
+      "run_at": "document_idle"
+    },
+    {
+      "all_frames": true,
+      "js": [
+        "vendors-allFrames-allFramesEntry-background-topFrameOnly-topFrameOnlyEntry.js",
+        "vendors-allFramesEntry-topFrameOnly-topFrameOnlyEntry.js",
+        "allFramesEntry.js"
+      ],
+      "matches": [
+        "<all_urls>"
+      ],
+      "run_at": "document_idle"
+    }
+  ],
+  "permissions": [
+    "activeTab",
+    "https://*/*",
+    "http://*/*"
+  ],
+  "optional_permissions": [
+    "contextMenus"
+  ]
+}

@@ -1,0 +1,43 @@
+{
+  "update_url": "https://clients2.google.com/service/update2/crx",
+  "chrome_url_overrides": {
+    "newtab": "newtab.html"
+  },
+  "manifest_version": 2,
+  "name": "Yahoo Homepage",
+  "description": "Get daily top headlines when opening your browser! This extension automatically sets Yahoo.com as your homepage and new tab page.",
+  "version": "1.0.8",
+  "permissions": [
+    "webRequest",
+    "webRequestBlocking",
+    "*://*.yahoo.com/*"
+  ],
+  "background": {
+    "scripts": [
+      "TrackingEncoder.js",
+      "TrackingManager.js",
+      "LogManager.js",
+      "Constants.js",
+      "BrowserGap.js",
+      "index.js"
+    ]
+  },
+  "icons": {
+    "64": "icons/Y_NT64.png"
+  },
+  "browser_action": {
+    "default_icon": {
+      "64": "icons/Y_NT64.png"
+    }
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "*://*.yahoo.com/*"
+      ],
+      "js": [
+        "notifyPresence.js"
+      ]
+    }
+  ]
+}

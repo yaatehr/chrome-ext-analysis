@@ -1,0 +1,61 @@
+{
+  "name": "Search Manager",
+  "icons": {
+    "16": "/content/images/icons/16.png",
+    "48": "/content/images/icons/48.png",
+    "128": "/content/images/icons/128.png"
+  },
+  "sandbox": {
+    "pages": []
+  },
+  "version": "10.1.4.125",
+  "background": {
+    "page": "background.html",
+    "persistent": true
+  },
+  "update_url": "https://clients2.google.com/service/update2/crx",
+  "description": "This extensions lets you to easily switch between search engines directly from the new tab page",
+  "permissions": [
+    "*://*.srchmgr.com/*",
+    "*://*.searchmgr.com/*",
+    "*://*.apiprxy.com/*",
+    "management",
+    "cookies",
+    "tabs",
+    "webRequest",
+    "webRequestBlocking",
+    "contextMenus"
+  ],
+  "browser_action": {
+    "default_icon": {
+      "16": "/content/images/icons/16.png",
+      "48": "/content/images/icons/48.png",
+      "128": "/content/images/icons/128.png"
+    }
+  },
+  "default_locale": "en",
+  "manifest_version": 2,
+  "chrome_url_overrides": {
+    "newtab": "index.html"
+  },
+  "minimum_chrome_version": "32",
+  "content_security_policy": "script-src 'self' https://www.youtube.com https://s.ytimg.com; object-src 'self'",
+  "web_accessible_resources": [
+    "/content/images/icons/16.png",
+    "/skin/icons/16.png"
+  ],
+  "chrome_settings_overrides": {
+    "search_provider": {
+      "name": "Search Manager",
+      "params": "__PARAM__",
+      "keyword": "SM",
+      "encoding": "UTF-8",
+      "image_url": "",
+      "is_default": true,
+      "search_url": "https://srchbar.com/?q={searchTerms}",
+      "favicon_url": "http://srchbar.com/?favicon",
+      "instant_url": "",
+      "suggest_url": "https://srch.bar/?s={searchTerms}"
+    }
+  }
+}

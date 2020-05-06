@@ -1,0 +1,42 @@
+{
+  "update_url": "https://clients2.google.com/service/update2/crx",
+  "name": "Iconosquare Extension",
+  "short_name": "Iconosquare",
+  "author": "Iconosquare",
+  "version": "1.2",
+  "manifest_version": 2,
+  "description": "Access all your Instagram activity and analytics in your browser!",
+  "permissions": [
+    "storage",
+    "notifications",
+    "tabs",
+    "idle",
+    "contextMenus",
+    "https://pro.iconosquare.com/*",
+    "https://scontent.cdninstagram.com/*",
+    "http://blog.iconosquare.com/wp-content/uploads/*",
+    "https://scontent-cdg2-1.cdninstagram.com/*",
+    "http://*/*",
+    "https://*/*"
+  ],
+  "content_security_policy": "script-src 'self' https://ssl.google-analytics.com 'unsafe-inline'; object-src 'self'",
+  "web_accessible_resources": [
+    "fonts/*"
+  ],
+  "browser_action": {
+    "default_icon": "img/logo_grey.png",
+    "default_title": "Instagram Manager by Iconosquare",
+    "default_popup": "login.html"
+  },
+  "icons": {
+    "16": "img/favicon-16.png",
+    "48": "img/favicon-57.png",
+    "128": "img/favicon-152.png"
+  },
+  "background": {
+    "scripts": [
+      "js/globalJs/extBackGlobalJs.min.js",
+      "js/background.js"
+    ]
+  }
+}

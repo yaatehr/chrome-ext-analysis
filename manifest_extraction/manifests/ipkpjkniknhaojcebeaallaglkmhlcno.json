@@ -1,0 +1,30 @@
+{
+  "update_url": "https://clients2.google.com/service/update2/crx",
+  "name": "Post to Tumblr",
+  "version": "2.0.1",
+  "manifest_version": 2,
+  "description": "Post to Tumblr right from your browser toolbar!",
+  "homepage_url": "http://www.tumblr.com",
+  "icons": {
+    "16": "icons/16.png",
+    "48": "icons/48.png",
+    "128": "icons/128.png"
+  },
+  "browser_action": {
+    "default_title": "Post to Tumblr",
+    "default_icon": {
+      "19": "icons/toolbar-icon.png",
+      "38": "icons/toolbar-icon2x.png"
+    }
+  },
+  "permissions": [
+    "tabs",
+    "http://*/*",
+    "https://*/*"
+  ],
+  "background": {
+    "scripts": [
+      "js/background.js"
+    ]
+  }
+}

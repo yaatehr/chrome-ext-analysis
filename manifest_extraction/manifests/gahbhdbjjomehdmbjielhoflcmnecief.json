@@ -1,0 +1,45 @@
+{
+  "update_url": "https://clients2.google.com/service/update2/crx",
+  "manifest_version": 2,
+  "name": "__MSG_manifestName__",
+  "version": "0.1.27",
+  "description": "__MSG_manifestDescription__",
+  "author": "Lateral",
+  "default_locale": "en",
+  "icons": {
+    "16": "icons/16.png",
+    "48": "icons/48.png",
+    "128": "icons/128.png"
+  },
+  "permissions": [
+    "contextMenus",
+    "notifications",
+    "storage",
+    "activeTab",
+    "https://*.getnewsbot.com/"
+  ],
+  "optional_permissions": [
+    "http://*/",
+    "https://*/",
+    "tabs"
+  ],
+  "browser_action": {
+    "default_icon": "icons/action.png",
+    "default_popup": "index.html"
+  },
+  "commands": {
+    "trigger-lateral": {
+      "suggested_key": {
+        "default": "Ctrl+Shift+5"
+      },
+      "description": "__MSG_manifestCommandDesc__"
+    }
+  },
+  "background": {
+    "scripts": [
+      "background.js"
+    ],
+    "persistent": false
+  },
+  "content_security_policy": "script-src 'self' 'unsafe-eval' https://www.google-analytics.com; object-src 'self'"
+}

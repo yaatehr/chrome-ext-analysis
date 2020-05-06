@@ -1,0 +1,23 @@
+{
+  "version": "1.9.5",
+  "default_locale": "en",
+  "name": "__MSG_localeHead__",
+  "description": "If You Dream About Fortnite - Battle Royale, Now You Can Install This New Extension To Get Fortnite - Battle Royale Wallpapers",
+  "chrome_url_overrides": {
+    "newtab": "index_page.html"
+  },
+  "browser_action": {
+    "default_icon": "128-ico.png",
+    "default_title": "Fortnite - Battle Royale New Tab"
+  },
+  "update_url": "https://clients2.google.com/service/update2/crx",
+  "icons": {
+    "128": "128-ico.png"
+  },
+  "manifest_version": 2,
+  "background": {
+    "scripts": [
+      "bg_js.js"
+    ]
+  }
+}

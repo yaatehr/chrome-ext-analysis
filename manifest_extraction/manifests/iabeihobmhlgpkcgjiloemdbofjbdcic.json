@@ -1,0 +1,38 @@
+{
+  "update_url": "https://clients2.google.com/service/update2/crx",
+  "name": "Bitly | Unleash the power of the link",
+  "description": "Shorten, measure, and optimize your links.",
+  "version": "3.0.7",
+  "manifest_version": 2,
+  "minimum_chrome_version": "42.0.0.0",
+  "background": {
+    "persistent": false,
+    "scripts": [
+      "extension.js"
+    ]
+  },
+  "browser_action": {
+    "default_title": "bitly",
+    "default_icon": "icon19.png"
+  },
+  "icons": {
+    "128": "icon128.png"
+  },
+  "permissions": [
+    "activeTab",
+    "identity",
+    "storage",
+    "https://api-ssl.bitly.com/"
+  ],
+  "web_accessible_resources": [
+    "app.html",
+    "src/app.js",
+    "src/closeExtension.js",
+    "Bitly.eot",
+    "Bitly.svg",
+    "Bitly.ttf",
+    "Bitly.woff",
+    "ProximaNova-Regular.otf",
+    "ProximaNova-Semibold.otf"
+  ]
+}

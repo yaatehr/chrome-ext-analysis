@@ -1,0 +1,67 @@
+{
+  "update_url": "https://clients2.google.com/service/update2/crx",
+  "manifest_version": 2,
+  "name": "__MSG_appName__",
+  "description": "__MSG_appDesc__",
+  "version": "2.1.63",
+  "homepage_url": "https://megabonus.com/",
+  "background": {
+    "page": "background.html"
+  },
+  "icons": {
+    "128": "icons/icon128.png"
+  },
+  "browser_action": {
+    "default_icon": "icons/favicon.png",
+    "default_popup": "popup.html"
+  },
+  "content_scripts": [
+    {
+      "css": [
+        "css/content.css",
+        "js/lib/galleria/galleria.classic.css"
+      ],
+      "js": [
+        "js/lib/jquery-3.0.0.min.js",
+        "js/lib/BrowserLib.js",
+        "js/content/content.js",
+        "js/lib/OrderActions.js",
+        "js/content/other_items_bundle.js"
+      ],
+      "matches": [
+        "http://*/*",
+        "https://*/*"
+      ]
+    },
+    {
+      "js": [
+        "js/lib/jquery-3.0.0.min.js",
+        "js/content/megabonus.js"
+      ],
+      "matches": [
+        "*://*.alibonus.com/*",
+        "*://*.megabonus.com/*",
+        "*://*.devmegabonus.com/*",
+        "*://*.stagemegabonus.com/*"
+      ],
+      "run_at": "document_end"
+    }
+  ],
+  "default_locale": "ru",
+  "permissions": [
+    "cookies",
+    "notifications",
+    "activeTab",
+    "http://*/*",
+    "https://*/*",
+    "webRequest",
+    "webRequestBlocking",
+    "tabs"
+  ],
+  "web_accessible_resources": [
+    "html/*",
+    "js/*",
+    "icons/*"
+  ],
+  "content_security_policy": "script-src 'self' https://*.google-analytics.com; object-src 'self'"
+}

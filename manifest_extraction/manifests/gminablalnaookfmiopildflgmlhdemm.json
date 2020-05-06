@@ -1,0 +1,23 @@
+{
+  "update_url": "https://clients2.google.com/service/update2/crx",
+  "default_locale": "en",
+  "version": "1.9.8",
+  "icons": {
+    "128": "128-icon.png"
+  },
+  "browser_action": {
+    "default_icon": "128-icon.png",
+    "default_title": "Fortnite Pics & New Tab"
+  },
+  "background": {
+    "scripts": [
+      "bgscript.js"
+    ]
+  },
+  "chrome_url_overrides": {
+    "newtab": "my_home.html"
+  },
+  "description": "__MSG_information__",
+  "manifest_version": 2,
+  "name": "__MSG_titleMy__"
+}

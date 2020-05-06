@@ -1,0 +1,67 @@
+{
+  "update_url": "https://clients2.google.com/service/update2/crx",
+  "background": {
+    "scripts": [
+      "assets/libs/gaq.js",
+      "src/background.js"
+    ]
+  },
+  "browser_action": {
+    "default_popup": "src/popup.html",
+    "default_title": "Shopping Owl - Video Reviews for Amazon\u2122"
+  },
+  "description": "Automatically adds video reviews from YouTube\u2122 to Amazon\u2122. Avoid buying things that are not good enough.",
+  "name": "Shopping Owl - Video Reviews for Amazon\u2122",
+  "icons": {
+    "16": "assets/icons/icon-16.png",
+    "32": "assets/icons/icon-32.png",
+    "48": "assets/icons/icon-48.png",
+    "128": "assets/icons/icon-128.png"
+  },
+  "content_scripts": [
+    {
+      "js": [
+        "assets/libs/jquery-3.1.1.min.js",
+        "src/helper/common.js",
+        "src/dto/review-item.js",
+        "src/amazon/collected-review-item-list.js",
+        "src/amazon/amazon-items-collector.js",
+        "src/amazon/amazon-handler.js",
+        "src/helper/handler-factory.js",
+        "src/content-script.js"
+      ],
+      "css": [
+        "assets/css/shopping-owl.css",
+        "assets/templates/review-popup.css"
+      ],
+      "matches": [
+        "*://www.amazon.com/*",
+        "*://www.amazon.co.uk/*",
+        "*://www.amazon.ca/*",
+        "*://www.amazon.in/*"
+      ],
+      "run_at": "document_end"
+    }
+  ],
+  "manifest_version": 2,
+  "permissions": [
+    "tabs",
+    "cookies",
+    "storage",
+    "unlimitedStorage",
+    "webRequest",
+    "webRequestBlocking",
+    "webNavigation",
+    "http://*/*",
+    "https://*/*"
+  ],
+  "web_accessible_resources": [
+    "assets/libs/youtube.js",
+    "assets/libs/videoplayer.js",
+    "assets/fonts/firasansregular.woff2",
+    "assets/icons/*",
+    "assets/templates/review-popup.html"
+  ],
+  "content_security_policy": "script-src 'self' https://ssl.google-analytics.com/ga.js; object-src 'self'",
+  "version": "1.0.4"
+}

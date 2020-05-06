@@ -1,0 +1,47 @@
+{
+  "update_url": "https://clients2.google.com/service/update2/crx",
+  "manifest_version": 2,
+  "name": "Ashtanga Yoga Moon Days",
+  "description": "Full and new moon rest days according to the Ashtanga Yoga tradition.",
+  "version": "1.1.0",
+  "icons": {
+    "16": "icons/icon16-yellow.png",
+    "48": "icons/icon48-yellow.png",
+    "128": "icons/icon128.png"
+  },
+  "permissions": [
+    "background",
+    "notifications",
+    "storage",
+    "tabs",
+    "<all_urls>"
+  ],
+  "content_security_policy": "script-src 'self' https://ssl.google-analytics.com; object-src 'self'",
+  "background": {
+    "scripts": [
+      "background.js"
+    ]
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "<all_urls>"
+      ],
+      "js": [
+        "content/content.js"
+      ],
+      "run_at": "document_start"
+    }
+  ],
+  "browser_action": {
+    "default_icon": "icons/icon16-green.png",
+    "default_popup": "popup/popup.html",
+    "default_title": "Ashtanga Yoga Moon Days"
+  },
+  "web_accessible_resources": [
+    "icons/icon16-green.png",
+    "icons/icon16-red.png",
+    "icons/icon16-yellow.png",
+    "images/background.png"
+  ]
+}
