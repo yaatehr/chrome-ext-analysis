@@ -103,7 +103,7 @@ if __name__ == "__main__":
             if extension.is_valid:
                 extension_list.append(extension)
 
-    analytics = {"content_security_policy": Counter(), "permissions": Counter(), "unsafe": Counter(), "misc": Counter(), "num_content_scripts": Counter()} #TODO add optional permissions:
+    analytics = {"content_security_policy": Counter(), "permissions": Counter(), "unsafe": Counter(), "misc": Counter(), "num_content_scripts": Counter(), "num_apps_evaluated": len(extension_list)} #TODO add optional permissions:
 
     for extension in extension_list:
         if extension.content_security_policy:

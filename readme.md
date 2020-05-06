@@ -16,6 +16,7 @@ currently our analytic output looks like...
                                        'form-action': 1,
                                        'base-uri': 1}),
   'misc': Counter(),
+  'num_apps_evaluated': 28,
   'num_content_scripts': Counter({1: 9, 2: 1, 4: 1, 5: 1}),
   'permissions': Counter({ 'storage': 12,
                            'contextMenus': 9,
