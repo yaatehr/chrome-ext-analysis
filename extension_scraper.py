@@ -81,8 +81,9 @@ class Extension():
 
     def __str__(self):
         """
-        Turn metadata from each extension into a 
+        Turn metadata from each extension into a string. To be used for line by line CSV extraction
         """
+        
 
 
 
@@ -183,8 +184,16 @@ if __name__ == "__main__":
             js = list(item_generator(extension.manifest_json, "js"))
             if len(js):
                 analytics["num_content_scripts"][len(js)] += 1
-            
-    pp.pprint(analytics)
+
+    pruned_analytics = {}
+    num_most_common = 50
+    for k,v in analytics.items():
+        if isinstance(v, Counter):
+            pruned_analytics[k] = v.most_common(num_most_common)
+        else:
+            pruned_analytics[k] = v
+
+    pp.pprint(pruned_analytics)
 
 
 
