@@ -80,6 +80,9 @@ class Extension:
         except IndexError:
             return f"Error FAILED_TO_PARSE_{self.id}"
 
+    def has_permission(self, permission: str) -> bool:
+        return permission in self.permissions
+
     def csp(self):
         if self.content_security_policy is None:
             return None
