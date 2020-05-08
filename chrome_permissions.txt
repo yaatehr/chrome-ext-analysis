@@ -51,7 +51,6 @@ system.memory
 system.storage
 tabCapture
 tabs
-tabs
 topSites
 tts
 ttsEngine

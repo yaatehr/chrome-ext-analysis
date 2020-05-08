@@ -1,0 +1,63 @@
+permission,specialty,times requested,pct,total
+activeTab,non-special,403,0.1465,2750
+alarms,non-special,205,0.0745,2750
+background,non-special,86,0.0313,2750
+bookmarks,non-special,68,0.0247,2750
+browsingData,non-special,19,0.0069,2750
+certificateProvider,non-special,0,0.    ,2750
+clipboardRead,non-special,32,0.0116,2750
+clipboardWrite,non-special,78,0.0284,2750
+contentSettings,special,12,0.0044,2750
+contextMenus,non-special,1113,0.4047,2750
+cookies,special,945,0.3436,2750
+debugger,non-special,8,0.0029,2750
+declarativeContent,non-special,24,0.0087,2750
+declarativeNetRequest,non-special,0,0.    ,2750
+declarativeWebRequest,non-special,1,0.0004,2750
+desktopCapture,special,27,0.0098,2750
+displaySource,non-special,0,0.    ,2750
+dns,special,0,0.    ,2750
+documentScan,special,0,0.    ,2750
+downloads,special,76,0.0276,2750
+enterprise.deviceAttributes,special,1,0.0004,2750
+enterprise.hardwarePlatform,special,0,0.    ,2750
+enterprise.platformKeys,special,0,0.    ,2750
+experimental,non-special,0,0.    ,2750
+fileBrowserHandler,non-special,5,0.0018,2750
+fileSystemProvider,non-special,0,0.    ,2750
+fontSettings,special,8,0.0029,2750
+gcm,non-special,32,0.0116,2750
+geolocation,special,57,0.0207,2750
+history,special,59,0.0215,2750
+identity,special,109,0.0396,2750
+idle,non-special,80,0.0291,2750
+idltest,non-special,0,0.    ,2750
+management,non-special,777,0.2825,2750
+nativeMessaging,non-special,52,0.0189,2750
+networking.config,special,0,0.    ,2750
+notifications,non-special,1006,0.3658,2750
+pageCapture,non-special,8,0.0029,2750
+platformKeys,special,0,0.    ,2750
+power,special,7,0.0025,2750
+printerProvider,non-special,0,0.    ,2750
+privacy,special,31,0.0113,2750
+processes,special,0,0.    ,2750
+proxy,special,54,0.0196,2750
+sessions,non-special,10,0.0036,2750
+signedInDevices,non-special,0,0.    ,2750
+storage,special,1728,0.6284,2750
+system.cpu,special,7,0.0025,2750
+system.display,special,5,0.0018,2750
+system.memory,special,5,0.0018,2750
+system.storage,special,1,0.0004,2750
+tabCapture,non-special,21,0.0076,2750
+tabs,special,1716,0.624 ,2750
+topSites,non-special,699,0.2542,2750
+tts,non-special,15,0.0055,2750
+ttsEngine,non-special,1,0.0004,2750
+unlimitedStorage,special,899,0.3269,2750
+vpnProvider,special,0,0.    ,2750
+wallpaper,non-special,0,0.    ,2750
+webNavigation,special,231,0.084 ,2750
+webRequest,special,417,0.1516,2750
+webRequestBlocking,special,357,0.1298,2750
